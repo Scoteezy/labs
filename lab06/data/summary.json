@@ -1,0 +1,30 @@
+{
+  "pairs": 192,
+  "products": 24,
+  "families": 12,
+  "by_split": {
+    "test": 48,
+    "train": 96,
+    "validation": 48
+  },
+  "by_label": {
+    "0": 96,
+    "1": 96
+  },
+  "by_defect_type": {
+    "logo": 24,
+    "none": 96,
+    "shape": 24,
+    "text": 48
+  },
+  "visual_pilot": {
+    "rows": 12,
+    "agreement": 12,
+    "by_observed_type": {
+      "logo": 3,
+      "none": 3,
+      "shape": 3,
+      "text": 3
+    }
+  }
+}

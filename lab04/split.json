@@ -1,0 +1,23 @@
+{
+  "dataset_version": "1.0",
+  "seed": 20261124,
+  "test": [
+    "F10",
+    "F11",
+    "F12"
+  ],
+  "train": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06"
+  ],
+  "unit": "family_id",
+  "validation": [
+    "F07",
+    "F08",
+    "F09"
+  ]
+}

@@ -1,160 +1,181 @@
-"""Exercise the local HTTP contract and compare full JSON responses with the snapshot."""
+"""Capture and verify the Lab 11 HTTP contract against controlled Lab 4 pairs."""
 
-import argparse
+from __future__ import annotations
+
+import base64
+import io
 import json
-from dataclasses import dataclass
 from http.client import HTTPConnection
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from threading import Thread
-from typing import Optional
+from unittest.mock import patch
 
-from lab11.search import BASE_IDF, DEFAULT_CONFIG, LEXICON, SearchService, load_config
+from PIL import Image
+
+from lab11.inspect import InspectionService
 from lab11.server import create_server
+from lab09 import experiment
 
 
-SNAPSHOT = Path(__file__).with_name("results") / "api_examples.json"
-NORMAL = "афиша крупным акцентом"
-NORMAL_IDS = ("P001", "P011", "P027")
-UNKNOWN = "jazz minimalist"
+ROOT = Path(__file__).resolve().parent
+REPOSITORY = ROOT.parent
+SNAPSHOT = ROOT / "results" / "api_examples.json"
 
 
-@dataclass
-class Case:
-    name: str
-    profile: str
-    payload: object
-    http_status: int
-    status: str
-    error: Optional[str] = None
-    ids: tuple[str, ...] = ()
-    fallback_reason: Optional[str] = None
-    path: str = "/search"
-    raw_body: Optional[str] = None
-    content_type: str = "application/json; charset=utf-8"
+def pair_payload(pair_id: str) -> dict:
+    pairs = json.loads((REPOSITORY / "lab06" / "data" / "prepared.json").read_text(encoding="utf-8"))["pairs"]
+    row = next(row for row in pairs if row["pair_id"] == pair_id)
+    return {
+        "original_base64": base64.b64encode((REPOSITORY / row["original"]).read_bytes()).decode("ascii"),
+        "candidate_base64": base64.b64encode((REPOSITORY / row["candidate"]).read_bytes()).decode("ascii"),
+        "original_box": row["original_box"],
+        "candidate_box": row["candidate_box"],
+    }
 
 
-CASES = (
-    Case("normal", "baseline", {"query": NORMAL}, 200, "ok", ids=NORMAL_IDS),
-    Case("trimmed", "baseline", {"query": f"  {NORMAL}  "}, 200, "ok", ids=NORMAL_IDS),
-    Case("synonym_baseline", "baseline", {"query": "саксофон"}, 200, "no_matches"),
-    Case("synonym_candidate", "candidate", {"query": "саксофон"}, 200, "ok",
-         ids=("P006", "P005", "P004")),
-    Case("unknown_language", "candidate", {"query": UNKNOWN}, 200, "no_matches"),
-    Case("empty", "baseline", {"query": "  "}, 400, "error", "empty_query"),
-    Case("max_length", "baseline", {"query": "я" * 300}, 200, "no_matches"),
-    Case("long", "baseline", {"query": "я" * 301}, 400, "error", "query_too_long"),
-    Case("bad_type", "baseline", {"query": 42}, 400, "error", "query_must_be_string"),
-    Case("missing_query", "baseline", {}, 400, "error", "query_must_be_string"),
-    Case("not_object", "baseline", [], 400, "error", "object_required"),
-    Case("bad_json", "baseline", None, 400, "error", "invalid_json", raw_body='{"query":'),
-    Case("oversize_body", "baseline", None, 413, "error", "body_too_large",
-         raw_body=" " * 4097),
-    Case("wrong_media_type", "baseline", {"query": NORMAL}, 415, "error",
-         "unsupported_media_type", content_type="text/plain"),
-    Case("unknown_route", "baseline", {"query": NORMAL}, 404, "error", "not_found",
-         path="/unknown"),
-    Case("fallback", "candidate_missing_lexicon", {"query": NORMAL}, 200, "fallback",
-         ids=NORMAL_IDS, fallback_reason="candidate_unavailable"),
-    Case("fallback_no_matches", "candidate_missing_lexicon", {"query": UNKNOWN}, 200,
-         "no_matches", fallback_reason="candidate_unavailable"),
-    Case("unavailable", "baseline_missing_idf", {"query": NORMAL}, 503, "unavailable",
-         "catalog_unavailable"),
-)
-
-
-def load_profile(profile: str, directory: Path) -> SearchService:
-    if profile in ("baseline", "candidate"):
-        return SearchService.load(mode=profile)
-    config = load_config(DEFAULT_CONFIG)
-    if profile == "candidate_missing_lexicon":
-        config["mode"] = "candidate"
-        del config["sha256"][LEXICON]
-    elif profile == "baseline_missing_idf":
-        del config["sha256"][BASE_IDF]
-    else:
-        raise ValueError(f"Неизвестный профиль: {profile}")
-    path = directory / f"{profile}.json"
-    path.write_text(json.dumps(config), encoding="utf-8")
-    return SearchService.load(path)
-
-
-def capture(port: int, case: Case) -> dict:
-    body = case.raw_body
-    if body is None:
-        body = json.dumps(case.payload, ensure_ascii=False, separators=(",", ":"))
-    raw = body.encode("utf-8")
+def request(port: int, path: str, body: bytes, content_type: str = "application/json") -> tuple[int, dict]:
     connection = HTTPConnection("127.0.0.1", port, timeout=5)
     try:
-        connection.request("POST", case.path, body=raw, headers={"Content-Type": case.content_type})
+        connection.request("POST", path, body=body, headers={
+            "Content-Type": content_type,
+            "Content-Length": str(len(body)),
+        })
         response = connection.getresponse()
-        output = json.loads(response.read())
+        return response.status, json.loads(response.read())
     finally:
         connection.close()
 
-    expected = (case.http_status, case.status, case.error, case.ids, case.fallback_reason)
-    actual = (response.status, output["status"], output.get("error"),
-              tuple(row["id"] for row in output["results"]), output.get("fallback_reason"))
-    if actual != expected:
-        raise ValueError(f"{case.name}: ожидалось {expected}, получено {actual}")
-    if response.status == 200:
-        expected_mode = "candidate" if case.profile == "candidate" else "baseline"
-        if output["mode"] != expected_mode or output["human_decision_required"] != bool(case.ids):
-            raise ValueError(f"{case.name}: неверный режим или признак ручного выбора")
 
+def request_declared_too_large(port: int, max_body_bytes: int) -> tuple[int, dict]:
+    """Exercise the Content-Length guard without uploading an oversized body.
+
+    The server rejects this request from its headers, so sending the claimed
+    body would only make a normal HTTP client hit a broken pipe after 413.
+    """
+    connection = HTTPConnection("127.0.0.1", port, timeout=5)
+    try:
+        connection.putrequest("POST", "/inspect")
+        connection.putheader("Content-Type", "application/json")
+        connection.putheader("Content-Length", str(max_body_bytes + 1))
+        connection.endheaders()
+        response = connection.getresponse()
+        return response.status, json.loads(response.read())
+    finally:
+        connection.close()
+
+
+def invoke(service: InspectionService, name: str, payload: object, expected: tuple[int, str], path="/inspect",
+           content_type="application/json") -> dict:
+    with create_server(service, port=0) as httpd:
+        worker = Thread(target=httpd.serve_forever, kwargs={"poll_interval": 0.01})
+        worker.start()
+        try:
+            body = payload if isinstance(payload, bytes) else json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+            status, output = request(httpd.server_port, path, body, content_type)
+        finally:
+            httpd.shutdown()
+            worker.join()
+    actual = output.get("assessment") if status == 200 else output.get("error")
+    if (status, actual) != expected:
+        raise ValueError(f"{name}: expected {expected}, got {(status, actual)}")
     return {
-        "case": case.name,
-        "profile": case.profile,
+        "case": name,
         "request": {
-            "method": "POST",
-            "path": case.path,
-            "content_type": case.content_type,
-            "body_bytes": len(raw),
-            **({"json": case.payload} if case.raw_body is None else {"raw_utf8": case.raw_body}),
+            "path": path,
+            "content_type": content_type,
+            "body_bytes": len(body),
+            **({"raw_utf8": payload.decode("utf-8")} if isinstance(payload, bytes) else {"json": payload}),
         },
-        "expected": {
-            "http_status": case.http_status,
-            "status": case.status,
-            "error": case.error,
-            "ids": list(case.ids),
-            "fallback_reason": case.fallback_reason,
-        },
-        "http_status": response.status,
+        "expected": {"http_status": expected[0], "assessment_or_error": expected[1]},
+        "http_status": status,
         "output": output,
     }
 
 
-def run_cases() -> list[dict]:
-    outputs = {}
-    with TemporaryDirectory() as temporary:
-        for profile in dict.fromkeys(case.profile for case in CASES):
-            service = load_profile(profile, Path(temporary))
-            with create_server(service, port=0) as server:
-                worker = Thread(target=server.serve_forever, kwargs={"poll_interval": 0.05})
-                worker.start()
-                try:
-                    for case in CASES:
-                        if case.profile == profile:
-                            outputs[case.name] = capture(server.server_port, case)
-                finally:
-                    server.shutdown()
-                    worker.join()
-    return [outputs[case.name] for case in CASES]
+def invoke_declared_too_large(service: InspectionService) -> dict:
+    with create_server(service, port=0) as httpd:
+        worker = Thread(target=httpd.serve_forever, kwargs={"poll_interval": 0.01})
+        worker.start()
+        try:
+            status, output = request_declared_too_large(httpd.server_port, service.config["max_body_bytes"])
+        finally:
+            httpd.shutdown()
+            worker.join()
+    if (status, output.get("error")) != (413, "body_too_large"):
+        raise ValueError(f"body_too_large: expected (413, body_too_large), got {(status, output.get('error'))}")
+    return {
+        "case": "body_too_large",
+        "request": {
+            "path": "/inspect",
+            "content_type": "application/json",
+            "declared_body_bytes": service.config["max_body_bytes"] + 1,
+            "body_sent": False,
+        },
+        "http_status": status,
+        "output": output,
+    }
+
+
+def scenarios() -> list[dict]:
+    selected = InspectionService.load()
+    candidate = InspectionService.load(force_mode="candidate")
+    unavailable = InspectionService(selected.config, None, "fixture")
+    valid = pair_payload("PAIR001_01")
+    critical = pair_payload("PAIR001_08")
+    invalid_box = dict(valid, original_box=[0, 0, 10000, 10])
+    with Image.open(io.BytesIO(base64.b64decode(valid["original_base64"]))) as source:
+        encoded = io.BytesIO()
+        source.save(encoded, format="JPEG")
+    wrong_format = dict(valid, original_base64=base64.b64encode(encoded.getvalue()).decode("ascii"))
+    cases = [
+        invoke(selected, "normal_passed", valid, (200, "passed")),
+        invoke(selected, "normal_suspected", critical, (200, "suspected_distortion")),
+        invoke(candidate, "forced_candidate", critical, (200, "suspected_distortion")),
+        invoke(selected, "not_object", [], (400, "object_required")),
+        invoke(selected, "invalid_json", b'{"original_base64":', (400, "invalid_json")),
+        invoke(selected, "invalid_base64", dict(valid, original_base64="%%%"), (400, "original_invalid_base64")),
+        invoke(selected, "wrong_format", wrong_format, (415, "original_must_be_png")),
+        invoke(selected, "invalid_box", invalid_box, (400, "invalid_box")),
+        invoke(selected, "wrong_media_type", valid, (415, "unsupported_media_type"), content_type="text/plain"),
+        invoke(selected, "unknown_route", valid, (404, "not_found"), path="/unknown"),
+        invoke_declared_too_large(selected),
+        invoke(unavailable, "unavailable", valid, (503, "model_unavailable")),
+    ]
+    with patch.object(experiment, "candidate_score", side_effect=RuntimeError("controlled failure")):
+        fallback = invoke(candidate, "candidate_fallback", critical, (200, "suspected_distortion"))
+    if (fallback["output"]["status"], fallback["output"]["mode"], fallback["output"]["fallback_reason"]) != (
+        "fallback", "baseline", "candidate_scoring_failed"
+    ):
+        raise ValueError("Модуль не подтвердил резервное переключение на baseline")
+    cases.append(fallback)
+    return cases
+
+
+def stable(rows: list[dict]) -> str:
+    return json.dumps(rows, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
 
 
 def main() -> None:
+    import argparse
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write", action="store_true", help="Save new HTTP responses to the snapshot")
+    action = parser.add_mutually_exclusive_group()
+    action.add_argument("--write", action="store_true")
+    action.add_argument("--request", metavar="PAIR_ID", help="Print one valid JSON request")
     args = parser.parse_args()
-    try:
-        rows = run_cases()
-        content = json.dumps(rows, ensure_ascii=False, indent=2) + "\n"
-        if args.write:
-            SNAPSHOT.write_text(content, encoding="utf-8")
-        elif SNAPSHOT.read_text(encoding="utf-8") != content:
-            raise ValueError(f"Повторный прогон расходится с {SNAPSHOT.name}")
-    except (OSError, ValueError) as error:
-        parser.exit(1, f"{error}\n")
+    if args.request:
+        try:
+            payload = pair_payload(args.request)
+        except StopIteration:
+            parser.error(f"Неизвестная пара: {args.request}")
+        print(json.dumps(payload, ensure_ascii=False))
+        return
+    rows = scenarios()
+    content = stable(rows)
+    if args.write:
+        SNAPSHOT.parent.mkdir(parents=True, exist_ok=True)
+        SNAPSHOT.write_text(content, encoding="utf-8")
+    elif SNAPSHOT.read_text(encoding="utf-8") != content:
+        raise SystemExit("Снимок API отличается. Запустите с --write только после проверки причин.")
     print(f"{len(rows)} HTTP-сценариев: OK")
 
 

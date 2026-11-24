@@ -1,0 +1,13 @@
+review_order,pair_id,split,observed_type,generator_type,agreement,observation
+1,PAIR001_07,train,shape,shape,1,Новый выступ справа у флакона
+2,PAIR011_08,train,text,text,1,MASK 60 заменено на SERUM 80
+3,PAIR006_08,train,text,text,1,OIL 25 заменено на SERUM 80
+4,PAIR004_06,train,logo,logo,1,VIVA заменено на V1VA
+5,PAIR010_06,train,logo,logo,1,VIVA заменено на V1VA
+6,PAIR007_02,train,none,none,1,"Изменился фон, этикетка и форма совпадают"
+7,PAIR008_07,train,shape,shape,1,Новый выступ справа у тюбика
+8,PAIR005_06,train,logo,logo,1,LUMA заменено на V1VA
+9,PAIR002_01,train,none,none,1,"Изменился фон, этикетка и форма совпадают"
+10,PAIR003_02,train,none,none,1,"Изменился фон, этикетка и форма совпадают"
+11,PAIR012_08,train,text,text,1,OIL 25 заменено на SERUM 80
+12,PAIR009_07,train,shape,shape,1,У правого края банки появился треугольный выступ

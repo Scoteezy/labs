@@ -1,8 +1,0 @@
-{
-  "implementation": "CPython",
-  "python": "3.9.6",
-  "system": "Darwin",
-  "architecture": "arm64",
-  "unicode_version": "13.0.0",
-  "dependencies": "Python standard library"
-}

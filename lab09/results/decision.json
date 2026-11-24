@@ -1,0 +1,41 @@
+{
+  "baseline_threshold": 0.017705861976,
+  "candidate_threshold": 0.023983302171,
+  "experiment": "LR09-LOCAL-01",
+  "mode": "baseline",
+  "reason": "Candidate не достиг заранее заданного условия выбора на validation, поэтому оставлен baseline.",
+  "selected_model_version": "ssim_1.0",
+  "selected_threshold": 0.017705861976,
+  "selection_rule": {
+    "candidate_recall_not_lower_than_baseline": true,
+    "minimum_f1_gain": 0.02
+  },
+  "selection_split": "validation",
+  "validation_baseline": {
+    "cases": 48,
+    "f1": 0.872727,
+    "fn": 0,
+    "fp": 7,
+    "positive_cases": 24,
+    "precision": 0.774194,
+    "recall": 1.0,
+    "specificity": 0.708333,
+    "threshold": 0.017705861976,
+    "tn": 17,
+    "tp": 24
+  },
+  "validation_candidate": {
+    "cases": 48,
+    "f1": 0.738462,
+    "fn": 0,
+    "fp": 17,
+    "positive_cases": 24,
+    "precision": 0.585366,
+    "recall": 1.0,
+    "specificity": 0.291667,
+    "threshold": 0.023983302171,
+    "tn": 7,
+    "tp": 24
+  },
+  "validation_f1_gain": -0.134265
+}

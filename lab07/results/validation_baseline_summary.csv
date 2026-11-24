@@ -1,4 +1,0 @@
-segment,queries,ndcg,recall,empty_results
-all,12,0.238525,0.208333,4
-literal,6,0.362294,0.250000,2
-synonym,6,0.114755,0.166667,2

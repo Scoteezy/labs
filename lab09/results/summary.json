@@ -1,0 +1,414 @@
+{
+  "baseline": {
+    "metrics": {
+      "test": {
+        "cases": 48,
+        "f1": 0.857143,
+        "fn": 0,
+        "fp": 8,
+        "positive_cases": 24,
+        "precision": 0.75,
+        "recall": 1.0,
+        "specificity": 0.666667,
+        "threshold": 0.017705861976,
+        "tn": 16,
+        "tp": 24
+      },
+      "train": {
+        "cases": 96,
+        "f1": 0.864865,
+        "fn": 0,
+        "fp": 15,
+        "positive_cases": 48,
+        "precision": 0.761905,
+        "recall": 1.0,
+        "specificity": 0.6875,
+        "threshold": 0.017705861976,
+        "tn": 33,
+        "tp": 48
+      },
+      "validation": {
+        "cases": 48,
+        "f1": 0.872727,
+        "fn": 0,
+        "fp": 7,
+        "positive_cases": 24,
+        "precision": 0.774194,
+        "recall": 1.0,
+        "specificity": 0.708333,
+        "threshold": 0.017705861976,
+        "tn": 17,
+        "tp": 24
+      }
+    },
+    "threshold": 0.017705861976
+  },
+  "candidate": {
+    "metrics": {
+      "test": {
+        "cases": 48,
+        "f1": 0.7,
+        "fn": 3,
+        "fp": 15,
+        "positive_cases": 24,
+        "precision": 0.583333,
+        "recall": 0.875,
+        "specificity": 0.375,
+        "threshold": 0.023983302171,
+        "tn": 9,
+        "tp": 21
+      },
+      "train": {
+        "cases": 96,
+        "f1": 0.728682,
+        "fn": 1,
+        "fp": 34,
+        "positive_cases": 48,
+        "precision": 0.580247,
+        "recall": 0.979167,
+        "specificity": 0.291667,
+        "threshold": 0.023983302171,
+        "tn": 14,
+        "tp": 47
+      },
+      "validation": {
+        "cases": 48,
+        "f1": 0.738462,
+        "fn": 0,
+        "fp": 17,
+        "positive_cases": 24,
+        "precision": 0.585366,
+        "recall": 1.0,
+        "specificity": 0.291667,
+        "threshold": 0.023983302171,
+        "tn": 7,
+        "tp": 24
+      }
+    },
+    "threshold": 0.023983302171
+  },
+  "change": "Фиксированное добавление 90-го квантиля абсолютной разности к глобальной SSIM-разности.",
+  "config_sha256": "0a444facb64cef9dc112eee00033417288b628b277a319c022970962a09ab871",
+  "dataset_version": "1.0",
+  "decision": {
+    "baseline_threshold": 0.017705861976,
+    "candidate_threshold": 0.023983302171,
+    "experiment": "LR09-LOCAL-01",
+    "mode": "baseline",
+    "reason": "Candidate не достиг заранее заданного условия выбора на validation, поэтому оставлен baseline.",
+    "selected_model_version": "ssim_1.0",
+    "selected_threshold": 0.017705861976,
+    "selection_rule": {
+      "candidate_recall_not_lower_than_baseline": true,
+      "minimum_f1_gain": 0.02
+    },
+    "selection_split": "validation",
+    "validation_baseline": {
+      "cases": 48,
+      "f1": 0.872727,
+      "fn": 0,
+      "fp": 7,
+      "positive_cases": 24,
+      "precision": 0.774194,
+      "recall": 1.0,
+      "specificity": 0.708333,
+      "threshold": 0.017705861976,
+      "tn": 17,
+      "tp": 24
+    },
+    "validation_candidate": {
+      "cases": 48,
+      "f1": 0.738462,
+      "fn": 0,
+      "fp": 17,
+      "positive_cases": 24,
+      "precision": 0.585366,
+      "recall": 1.0,
+      "specificity": 0.291667,
+      "threshold": 0.023983302171,
+      "tn": 7,
+      "tp": 24
+    },
+    "validation_f1_gain": -0.134265
+  },
+  "experiment": "LR09-LOCAL-01",
+  "formula": "0.55 * ssim_difference + 0.45 * q90_absolute_difference",
+  "input_sha256": {
+    "lab06/data/prepared.json": "cbefcebcb2d1ce66bee9ce313889e8ccda4ba426e4a568e6c71e0c728f46122d"
+  },
+  "segments": [
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 6,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 4,
+        "tn": 2,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "background_cool"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 6,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 1,
+        "tn": 5,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "background_warm"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 6,
+        "tn": 0,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 6,
+        "tn": 0,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "lighting_down"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 1,
+        "tn": 5,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 6,
+        "tn": 0,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "lighting_up"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "logo_cool"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "shape_up"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "text_down"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "pairs": 6,
+      "split": "validation",
+      "variation": "text_warm"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 6,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 2,
+        "tn": 4,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "background_cool"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 6,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 1,
+        "tn": 5,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "background_warm"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 6,
+        "tn": 0,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 6,
+        "tn": 0,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "lighting_down"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 2,
+        "tn": 4,
+        "tp": 0
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 6,
+        "tn": 0,
+        "tp": 0
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "lighting_up"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 3,
+        "fp": 0,
+        "tn": 0,
+        "tp": 3
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "logo_cool"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "shape_up"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "text_down"
+    },
+    {
+      "baseline": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "candidate": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 6
+      },
+      "pairs": 6,
+      "split": "test",
+      "variation": "text_warm"
+    }
+  ],
+  "selection_before_test": "Пороги и решение выбраны по validation, test показан после фиксации решения."
+}

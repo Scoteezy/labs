@@ -1,0 +1,72 @@
+{
+  "config_sha256": "eeb52d679f59a898af935e84645aa78a76b378cc0de3261f15b6fdbe92e6c04d",
+  "dataset_version": "1.0",
+  "environment": {
+    "numpy": "2.2.6",
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "python": "3.12.14"
+  },
+  "experiment": "LR07-SSIM-01",
+  "input_sha256": {
+    "lab06/data/prepared.json": "cbefcebcb2d1ce66bee9ce313889e8ccda4ba426e4a568e6c71e0c728f46122d"
+  },
+  "method": "1 - SSIM на серых выровненных фрагментах упаковки размером 128x128",
+  "metrics": {
+    "test": {
+      "cases": 48,
+      "f1": 0.857143,
+      "fn": 0,
+      "fp": 8,
+      "positive_cases": 24,
+      "precision": 0.75,
+      "recall": 1.0,
+      "specificity": 0.666667,
+      "threshold": 0.017705861976,
+      "tn": 16,
+      "tp": 24
+    },
+    "train": {
+      "cases": 96,
+      "f1": 0.864865,
+      "fn": 0,
+      "fp": 15,
+      "positive_cases": 48,
+      "precision": 0.761905,
+      "recall": 1.0,
+      "specificity": 0.6875,
+      "threshold": 0.017705861976,
+      "tn": 33,
+      "tp": 48
+    },
+    "validation": {
+      "cases": 48,
+      "f1": 0.872727,
+      "fn": 0,
+      "fp": 7,
+      "positive_cases": 24,
+      "precision": 0.774194,
+      "recall": 1.0,
+      "specificity": 0.708333,
+      "threshold": 0.017705861976,
+      "tn": 17,
+      "tp": 24
+    }
+  },
+  "score_direction": "большее значение означает большее отличие",
+  "selection_split": "validation",
+  "threshold": 0.017705861976,
+  "threshold_selection": "Максимальный F1, затем Recall, Specificity и меньший порог при равенстве.",
+  "validation_selection": {
+    "cases": 48,
+    "f1": 0.872727,
+    "fn": 0,
+    "fp": 7,
+    "positive_cases": 24,
+    "precision": 0.774194,
+    "recall": 1.0,
+    "specificity": 0.708333,
+    "threshold": 0.017705861976,
+    "tn": 17,
+    "tp": 24
+  }
+}

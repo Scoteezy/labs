@@ -1,201 +1,46 @@
 {
-  "source": "Архив ЛР 4 Учебный набор афиш — ЛР 4.zip, локальная копия data/",
-  "input_counts": {
-    "raw": 42,
-    "clean": 36,
-    "queries": 36,
-    "svg_files": 36
+  "dataset_version": "1.0",
+  "defect_type_counts": {
+    "logo": 24,
+    "none": 96,
+    "shape": 24,
+    "text": 48
   },
-  "clean_distribution": {
-    "genres": {
-      "джаз": 6,
-      "театр": 6,
-      "кино": 6,
-      "выставка": 6,
-      "электроника": 6,
-      "фестиваль": 6
-    },
-    "styles": {
-      "минимализм": 18,
-      "детализация": 18
-    },
-    "cards_by_split": {
-      "train": 12,
-      "validation": 12,
-      "test": 12
-    },
-    "queries_by_split": {
-      "train": 12,
-      "validation": 12,
-      "test": 12
-    }
-  },
-  "exclusions": {
-    "duplicate_image": 3,
-    "unknown_rights": 2,
-    "empty_description": 1
-  },
-  "extra_raw_records_by_sha256": 6,
-  "quality_checks_passed": true,
-  "quality_check_rows": [
-    {
-      "check": "Число исходных записей",
-      "actual": 42,
-      "expected": 42,
-      "status": "пройдено",
-      "details": "raw.json"
-    },
-    {
-      "check": "Число очищенных записей",
-      "actual": 36,
-      "expected": 36,
-      "status": "пройдено",
-      "details": "clean.json"
-    },
-    {
-      "check": "Повторяющиеся ID в raw",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "Проверка уникальности идентификаторов"
-    },
-    {
-      "check": "Повторяющиеся ID в clean",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "Проверка уникальности идентификаторов"
-    },
-    {
-      "check": "Повторяющиеся SHA-256 в clean",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "Хеши файлов SVG"
-    },
-    {
-      "check": "Неизвестный допуск в clean",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "rights_status"
-    },
-    {
-      "check": "Пустое description в clean",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "description"
-    },
-    {
-      "check": "Неполные поля в raw",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "нет"
-    },
-    {
-      "check": "Неполные поля в clean",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "нет"
-    },
-    {
-      "check": "Значения вне словаря категорий",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "нет"
-    },
-    {
-      "check": "Ошибки SVG или размеров",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "нет"
-    },
-    {
-      "check": "Несовпадения SHA-256 с файлами",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "нет"
-    },
-    {
-      "check": "IQR-выбросы площади",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "Q1=480000; Q3=480000; IQR=0"
-    },
-    {
-      "check": "Согласованность журнала исключений",
-      "actual": 1,
-      "expected": 1,
-      "status": "пройдено",
-      "details": "Причина фиксируется первым сработавшим правилом"
-    },
-    {
-      "check": "Пересечения ID, авторов, серий и SHA-256 между выборками",
-      "actual": 0,
-      "expected": 0,
-      "status": "пройдено",
-      "details": "Подробности в split_overlap.csv"
-    }
-  ],
-  "split_overlap": [
-    {
-      "split_a": "train",
-      "split_b": "validation",
-      "shared_id": 0,
-      "shared_author": 0,
-      "shared_series": 0,
-      "shared_sha256": 0,
-      "shared_description": 12,
-      "shared_svg_templates": 12,
-      "shared_query_texts": 12
-    },
-    {
-      "split_a": "train",
-      "split_b": "test",
-      "shared_id": 0,
-      "shared_author": 0,
-      "shared_series": 0,
-      "shared_sha256": 0,
-      "shared_description": 12,
-      "shared_svg_templates": 12,
-      "shared_query_texts": 12
-    },
-    {
-      "split_a": "validation",
-      "split_b": "test",
-      "shared_id": 0,
-      "shared_author": 0,
-      "shared_series": 0,
-      "shared_sha256": 0,
-      "shared_description": 12,
-      "shared_svg_templates": 12,
-      "shared_query_texts": 12
-    }
-  ],
-  "known_problem_examples": {
-    "D001": "точный дубль P001 по SHA-256, исключён",
-    "X001": "файл есть, rights_status=unknown, исключён",
-    "X003": "файл есть, description пусто, исключён"
-  },
-  "proxy_risk": "Ориентация и размеры полностью связаны со стилем: минимализм 600×800, детализация 800×600.",
-  "template_risk": "После замены ID в SVG между каждой парой split совпадают 12 шаблонов, а также все 12 текстов запросов. Разбиение защищает авторов и точные файлы, но не подтверждает перенос на независимые шаблоны.",
+  "families": 12,
   "figures": [
-    "results/figures/01_genres.png",
-    "results/figures/02_styles_splits.png",
-    "results/figures/03_volumes_splits.png",
-    "results/figures/04_exclusions.png",
-    "results/figures/05_orientation_style.png",
-    "results/figures/06_raw_problems.png",
-    "results/figures/07_split_overlap.png"
+    "01_split_labels.png",
+    "02_defect_types.png",
+    "03_variations.png",
+    "04_roi_area.png",
+    "05_families_by_split.png",
+    "06_media_examples.png"
   ],
+  "label_counts": {
+    "0": 96,
+    "1": 96
+  },
   "media_examples": [
-    "results/media_examples.html"
-  ]
+    "PAIR001_01",
+    "PAIR001_05",
+    "PAIR001_06",
+    "PAIR001_07"
+  ],
+  "pairs": 192,
+  "proxy_warnings": [
+    "variation=background_cool only label=0",
+    "variation=background_warm only label=0",
+    "variation=lighting_down only label=0",
+    "variation=lighting_up only label=0",
+    "variation=logo_cool only label=1",
+    "variation=shape_up only label=1",
+    "variation=text_down only label=1",
+    "variation=text_warm only label=1"
+  ],
+  "schema_or_file_failures": 0,
+  "scope": "controlled_synthetic_pilot",
+  "split_counts": {
+    "test": 48,
+    "train": 96,
+    "validation": 48
+  }
 }

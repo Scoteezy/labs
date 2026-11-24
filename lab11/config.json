@@ -2,21 +2,10 @@
   "config_version": "1.0",
   "host": "127.0.0.1",
   "port": 8765,
-  "mode": "baseline",
-  "k": 3,
-  "max_query_chars": 300,
-  "max_body_bytes": 4096,
-  "model_version": "1.0",
-  "dataset_version": "2.0",
-  "lexicon_version": "1.0",
-  "fit_split": "train",
-  "allowed_rights_status": "demo_allowed",
-  "sha256": {
-    "lab06/data/manifest.json": "1ea86720197b461479a4c421213ad407ef04dcdf937bb60cdc4ec1be704622d4",
-    "lab06/data/clean.json": "9e1b0564334e433e7b8c0b97035e19e881b1f7f7f920fb32586d0f0add61ea1e",
-    "lab06/data/split.json": "a38170429b89bb587a6456b223c4731f875217635b772f4d230b98bfa67dac48",
-    "lab06/data/idf.json": "e8b846746c618ab93b6f65edf2c42568f42030888bab39d18865e87243607260",
-    "lab09/lexicon.json": "d3e9d4d8466ececd9f31f0efe8ff853814881f7c0a37bcd67ec49e645fd1c0f5",
-    "lab09/results/candidate_idf.json": "e3503434a993dbe1b1e09c48fd1d3550f75df437b657689d7720eb6c3e6cd697"
-  }
+  "max_body_bytes": 3000000,
+  "max_image_bytes": 1048576,
+  "max_image_side": 2048,
+  "required_image_format": "PNG",
+  "default_mode": "selected",
+  "decision_sha256": "aa405a329c03742d4fed5da7f654b5a5e67ca8dc2a7a47cee5eacab201f1fa45"
 }

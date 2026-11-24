@@ -1,0 +1,8 @@
+{
+  "experiment": "LR07-SSIM-01",
+  "metric": "f1_critical_change",
+  "positive_label": 1,
+  "selection_split": "validation",
+  "preprocessing": "lab06.prepare_pair grayscale ROI 128x128",
+  "model": "1 - SSIM"
+}

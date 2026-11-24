@@ -1,158 +1,92 @@
-"""Measure warm-query latency for the fixed Lab 09 validation benchmark."""
+"""Measure local preparation and selected SSIM scoring on validation pairs."""
+
+from __future__ import annotations
 
 import argparse
+import json
 import math
 import platform
+import statistics
 import time
-import unicodedata
 from pathlib import Path
 
 from lab07 import baseline
-from lab09.experiment import Experiment, normalized_text
+from lab09 import experiment
 
 
-MODES = ("baseline", "candidate")
+ROOT = Path(__file__).resolve().parent
+REPOSITORY = ROOT.parent
+DECISION_PATH = REPOSITORY / "lab09" / "results" / "decision.json"
+PAIRS_PATH = REPOSITORY / "lab06" / "data" / "prepared.json"
 
 
-def percentile_ns(samples: list[int], proportion: float) -> int:
-    """Return the nearest-rank percentile without adding a dependency."""
+def percentile(samples: list[int], fraction: float) -> float:
     ordered = sorted(samples)
-    return ordered[math.ceil(len(ordered) * proportion) - 1]
+    return ordered[math.ceil(len(ordered) * fraction) - 1] / 1_000_000
 
 
-def milliseconds(value_ns: int) -> float:
-    return round(value_ns / 1_000_000, 6)
+def selected_score(reference, candidate, mode: str) -> float:
+    if mode == "baseline":
+        return baseline.baseline_score(reference, candidate)
+    if mode == "candidate":
+        return experiment.candidate_score(reference, candidate)
+    raise ValueError("Неизвестный выбранный режим")
 
 
-def build_modes(experiment: Experiment, benchmark: baseline.Benchmark) -> dict:
-    """Build each index before timing any query operation."""
-    modes = {}
-    for name, candidate in (("baseline", False), ("candidate", True)):
-        index, cases = experiment.evaluate_mode(benchmark, candidate=candidate)
-        modes[name] = {
-            "index": index,
-            "replacements": experiment.replacements if candidate else {},
-            "weights": experiment.candidate_idf["weights"] if candidate else experiment.base_idf["weights"],
-            "expected": [
-                [{"poster_id": hit["poster_id"], "score": hit["score"]} for hit in case["results"]]
-                for case in cases
-            ],
-        }
-    return modes
+def run(cycles: int = 20) -> dict:
+    experiment.check()
+    decision = json.loads(DECISION_PATH.read_text(encoding="utf-8"))
+    pairs = json.loads(PAIRS_PATH.read_text(encoding="utf-8"))["pairs"]
+    validation = [row for row in pairs if row["split"] == "validation"]
+    if not validation:
+        raise ValueError("Нет validation-пар для замера")
 
+    for row in validation:
+        selected_score(*baseline.prepared_images(row), decision["mode"])
+    durations = []
+    for _ in range(cycles):
+        for row in validation:
+            started = time.perf_counter_ns()
+            selected_score(*baseline.prepared_images(row), decision["mode"])
+            durations.append(time.perf_counter_ns() - started)
 
-def rank_query(query: str, mode: dict, k: int) -> list[dict]:
-    terms = normalized_text(query, mode["replacements"]).split()
-    vector = baseline.vectorize(terms, mode["weights"])
-    return baseline.rank(vector, mode["index"], k)
-
-
-def verify_rankings(queries: list[dict], modes: dict, k: int) -> None:
-    for name in MODES:
-        for query, expected in zip(queries, modes[name]["expected"]):
-            actual = rank_query(query["text"], modes[name], k)
-            if actual != expected:
-                raise ValueError(f"Ранжирование {name} расходится с результатом ЛР 9")
-
-
-def run_warmups(queries: list[dict], modes: dict, k: int, cycles: int) -> None:
-    for cycle in range(cycles):
-        order = MODES if cycle % 2 == 0 else tuple(reversed(MODES))
-        for name in order:
-            for query in queries:
-                rank_query(query["text"], modes[name], k)
-
-
-def measure(queries: list[dict], modes: dict, k: int, cycles: int) -> dict[str, list[int]]:
-    samples = {name: [] for name in MODES}
-    for cycle in range(cycles):
-        order = MODES if cycle % 2 == 0 else tuple(reversed(MODES))
-        for name in order:
-            for query in queries:
-                start = time.perf_counter_ns()
-                rank_query(query["text"], modes[name], k)
-                samples[name].append(time.perf_counter_ns() - start)
-    return samples
-
-
-def report(samples: dict[str, list[int]], experiment: Experiment, benchmark: baseline.Benchmark,
-           warmup_cycles: int, cycles: int) -> dict:
-    clock = time.get_clock_info("perf_counter")
-    mode_names = {
-        "baseline": experiment.config["baseline"],
-        "candidate": experiment.config["candidate"],
-    }
     return {
         "experiment": "LR10-LATENCY-01",
-        "purpose": "Задержка обработки запроса и top-3 ранжирования после загрузки индекса на validation ЛР 9.",
-        "dataset_version": experiment.config["dataset_version"],
-        "split": experiment.config["selection_split"],
-        "queries": len(benchmark.queries),
-        "permitted_candidates": len(benchmark.descriptions),
-        "k": experiment.k,
-        "measurement": {
-            "unit": "milliseconds",
-            "timer": "time.perf_counter_ns",
-            "timer_resolution_seconds": clock.resolution,
-            "warmup_cycles_per_mode": warmup_cycles,
-            "measurement_cycles_per_mode": cycles,
-            "samples_per_mode": len(next(iter(samples.values()))),
-            "interleaving": "Порядок режимов меняется на каждом цикле. Запросы идут в фиксированном порядке validation.",
-            "included": "Нормализация текста, векторизация запроса и косинусное top-3 ранжирование.",
-            "excluded": "Проверка допуска при построении индекса, чтение файлов, запуск процесса, HTTP и сериализация.",
-            "ranking_check": "До замера выдачи сверяются с повторно рассчитанными выдачами ЛР 9.",
-        },
-        "modes": {
-            name: {
-                "implementation": mode_names[name],
-                "p50_ms": milliseconds(percentile_ns(values, 0.50)),
-                "p95_ms": milliseconds(percentile_ns(values, 0.95)),
-                "minimum_ms": milliseconds(min(values)),
-                "maximum_ms": milliseconds(max(values)),
-            }
-            for name, values in samples.items()
-        },
+        "purpose": "Время подготовки двух областей товара из файлов и оценки выбранной модели.",
+        "mode": decision["mode"],
+        "model_version": decision["selected_model_version"],
+        "pairs_per_cycle": len(validation),
+        "cycles": cycles,
+        "samples": len(durations),
+        "unit": "milliseconds",
+        "p50_ms": round(percentile(durations, 0.5), 6),
+        "p95_ms": round(percentile(durations, 0.95), 6),
+        "minimum_ms": round(min(durations) / 1_000_000, 6),
+        "maximum_ms": round(max(durations) / 1_000_000, 6),
+        "mean_ms": round(statistics.fmean(durations) / 1_000_000, 6),
+        "included": "Pillow open, проверка областей, crop, resize, grayscale и score.",
+        "excluded": "Чтение JSON, запуск процесса, HTTP, base64-декодирование и решение дизайнера.",
         "environment": {
-            "implementation": platform.python_implementation(),
             "python": platform.python_version(),
-            "system": platform.system(),
-            "architecture": platform.machine(),
-            "unicode_version": unicodedata.unidata_version,
-            "dependencies": "Python standard library",
+            "system": platform.platform(),
         },
-        "note": "Временные значения зависят от машины и фоновой нагрузки.",
+        "note": "Значения зависят от машины и фоновой нагрузки.",
     }
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--out", type=Path, help="Optionally save the report to this file")
-    parser.add_argument("--cycles", type=int, default=100)
-    parser.add_argument("--warmup-cycles", type=int, default=20)
+    parser.add_argument("--cycles", type=int, default=20)
+    parser.add_argument("--out", type=Path, help="Optionally save a new measurement")
     args = parser.parse_args()
-    if args.cycles < 1 or args.warmup_cycles < 0:
-        parser.error("Число циклов должно быть положительным, а число прогревов неотрицательным")
-
-    try:
-        experiment = Experiment()
-        benchmark = baseline.load_validation(experiment.conditions(experiment.config["selection_split"]))
-        modes = build_modes(experiment, benchmark)
-        verify_rankings(benchmark.queries, modes, experiment.k)
-        run_warmups(benchmark.queries, modes, experiment.k, args.warmup_cycles)
-        output = report(
-            measure(benchmark.queries, modes, experiment.k, args.cycles),
-            experiment,
-            benchmark,
-            args.warmup_cycles,
-            args.cycles,
-        )
-        content = baseline.json_text(output)
-        if args.out:
-            args.out.parent.mkdir(parents=True, exist_ok=True)
-            args.out.write_text(content, encoding="utf-8")
-        print(content, end="")
-    except (OSError, KeyError, ValueError) as exc:
-        parser.exit(1, f"{exc}\n")
+    if args.cycles < 1:
+        parser.error("cycles must be positive")
+    result = run(args.cycles)
+    text = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
+    if args.out:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(text, encoding="utf-8")
+    print(text, end="")
 
 
 if __name__ == "__main__":

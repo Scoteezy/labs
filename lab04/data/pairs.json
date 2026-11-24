@@ -1,0 +1,5286 @@
+{
+  "dataset_version": "1.0",
+  "pairs": [
+    {
+      "candidate": "lab04/data/images/PAIR001_01_candidate.png",
+      "candidate_box": [
+        59,
+        53,
+        161,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_01",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR001_02_candidate.png",
+      "candidate_box": [
+        63,
+        55,
+        165,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_02",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR001_03_candidate.png",
+      "candidate_box": [
+        59,
+        56,
+        161,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_03",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR001_04_candidate.png",
+      "candidate_box": [
+        60,
+        52,
+        162,
+        240
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_04",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR001_05_candidate.png",
+      "candidate_box": [
+        60,
+        54,
+        162,
+        242
+      ],
+      "defect_region": [
+        87,
+        143,
+        136,
+        157
+      ],
+      "defect_type": "text",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_05",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR001_06_candidate.png",
+      "candidate_box": [
+        59,
+        55,
+        161,
+        243
+      ],
+      "defect_region": [
+        86,
+        124,
+        135,
+        138
+      ],
+      "defect_type": "logo",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_06",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR001_07_candidate.png",
+      "candidate_box": [
+        62,
+        54,
+        164,
+        242
+      ],
+      "defect_region": [
+        143,
+        99,
+        162,
+        142
+      ],
+      "defect_type": "shape",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_07",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR001_08_candidate.png",
+      "candidate_box": [
+        59,
+        52,
+        161,
+        240
+      ],
+      "defect_region": [
+        86,
+        141,
+        135,
+        155
+      ],
+      "defect_type": "text",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM001_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR001_08",
+      "product_id": "COSM001",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_01_candidate.png",
+      "candidate_box": [
+        56,
+        47,
+        170,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_01",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_02_candidate.png",
+      "candidate_box": [
+        53,
+        48,
+        167,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_02",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_03_candidate.png",
+      "candidate_box": [
+        57,
+        45,
+        171,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_03",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_04_candidate.png",
+      "candidate_box": [
+        56,
+        45,
+        170,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F01",
+      "label": 0,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_04",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_05_candidate.png",
+      "candidate_box": [
+        53,
+        46,
+        167,
+        242
+      ],
+      "defect_region": [
+        77,
+        113,
+        144,
+        127
+      ],
+      "defect_type": "text",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_05",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_06_candidate.png",
+      "candidate_box": [
+        56,
+        48,
+        170,
+        244
+      ],
+      "defect_region": [
+        80,
+        95,
+        147,
+        109
+      ],
+      "defect_type": "logo",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_06",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_07_candidate.png",
+      "candidate_box": [
+        56,
+        46,
+        170,
+        242
+      ],
+      "defect_region": [
+        149,
+        91,
+        168,
+        134
+      ],
+      "defect_type": "shape",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_07",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR002_08_candidate.png",
+      "candidate_box": [
+        57,
+        49,
+        171,
+        245
+      ],
+      "defect_region": [
+        81,
+        116,
+        148,
+        130
+      ],
+      "defect_type": "text",
+      "family_id": "F01",
+      "label": 1,
+      "original": "lab04/data/images/COSM002_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR002_08",
+      "product_id": "COSM002",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_01_candidate.png",
+      "candidate_box": [
+        41,
+        101,
+        179,
+        211
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_01",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_02_candidate.png",
+      "candidate_box": [
+        43,
+        99,
+        181,
+        209
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_02",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_03_candidate.png",
+      "candidate_box": [
+        45,
+        102,
+        183,
+        212
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_03",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_04_candidate.png",
+      "candidate_box": [
+        45,
+        101,
+        183,
+        211
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_04",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_05_candidate.png",
+      "candidate_box": [
+        42,
+        99,
+        180,
+        209
+      ],
+      "defect_region": [
+        60,
+        173,
+        163,
+        187
+      ],
+      "defect_type": "text",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_05",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_06_candidate.png",
+      "candidate_box": [
+        43,
+        99,
+        181,
+        209
+      ],
+      "defect_region": [
+        61,
+        153,
+        164,
+        167
+      ],
+      "defect_type": "logo",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_06",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_07_candidate.png",
+      "candidate_box": [
+        44,
+        103,
+        182,
+        213
+      ],
+      "defect_region": [
+        153,
+        140,
+        175,
+        175
+      ],
+      "defect_type": "shape",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_07",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR003_08_candidate.png",
+      "candidate_box": [
+        44,
+        102,
+        182,
+        212
+      ],
+      "defect_region": [
+        62,
+        176,
+        165,
+        190
+      ],
+      "defect_type": "text",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM003_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR003_08",
+      "product_id": "COSM003",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_01_candidate.png",
+      "candidate_box": [
+        59,
+        52,
+        161,
+        240
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_01",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_02_candidate.png",
+      "candidate_box": [
+        59,
+        53,
+        161,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_02",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_03_candidate.png",
+      "candidate_box": [
+        63,
+        53,
+        165,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_03",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_04_candidate.png",
+      "candidate_box": [
+        62,
+        54,
+        164,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F02",
+      "label": 0,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_04",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_05_candidate.png",
+      "candidate_box": [
+        60,
+        56,
+        162,
+        244
+      ],
+      "defect_region": [
+        87,
+        145,
+        136,
+        159
+      ],
+      "defect_type": "text",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_05",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_06_candidate.png",
+      "candidate_box": [
+        59,
+        55,
+        161,
+        243
+      ],
+      "defect_region": [
+        86,
+        124,
+        135,
+        138
+      ],
+      "defect_type": "logo",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_06",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_07_candidate.png",
+      "candidate_box": [
+        63,
+        56,
+        165,
+        244
+      ],
+      "defect_region": [
+        144,
+        101,
+        163,
+        144
+      ],
+      "defect_type": "shape",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_07",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR004_08_candidate.png",
+      "candidate_box": [
+        62,
+        55,
+        164,
+        243
+      ],
+      "defect_region": [
+        89,
+        144,
+        138,
+        158
+      ],
+      "defect_type": "text",
+      "family_id": "F02",
+      "label": 1,
+      "original": "lab04/data/images/COSM004_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR004_08",
+      "product_id": "COSM004",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_01_candidate.png",
+      "candidate_box": [
+        55,
+        49,
+        169,
+        245
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_01",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_02_candidate.png",
+      "candidate_box": [
+        55,
+        46,
+        169,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_02",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_03_candidate.png",
+      "candidate_box": [
+        54,
+        48,
+        168,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_03",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_04_candidate.png",
+      "candidate_box": [
+        53,
+        45,
+        167,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_04",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_05_candidate.png",
+      "candidate_box": [
+        53,
+        46,
+        167,
+        242
+      ],
+      "defect_region": [
+        77,
+        113,
+        144,
+        127
+      ],
+      "defect_type": "text",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_05",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_06_candidate.png",
+      "candidate_box": [
+        57,
+        45,
+        171,
+        241
+      ],
+      "defect_region": [
+        81,
+        92,
+        148,
+        106
+      ],
+      "defect_type": "logo",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_06",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_07_candidate.png",
+      "candidate_box": [
+        53,
+        48,
+        167,
+        244
+      ],
+      "defect_region": [
+        146,
+        93,
+        165,
+        136
+      ],
+      "defect_type": "shape",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_07",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR005_08_candidate.png",
+      "candidate_box": [
+        53,
+        48,
+        167,
+        244
+      ],
+      "defect_region": [
+        77,
+        115,
+        144,
+        129
+      ],
+      "defect_type": "text",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM005_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR005_08",
+      "product_id": "COSM005",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_01_candidate.png",
+      "candidate_box": [
+        44,
+        99,
+        182,
+        209
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_01",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_02_candidate.png",
+      "candidate_box": [
+        44,
+        100,
+        182,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_02",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_03_candidate.png",
+      "candidate_box": [
+        45,
+        102,
+        183,
+        212
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_03",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_04_candidate.png",
+      "candidate_box": [
+        44,
+        100,
+        182,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F03",
+      "label": 0,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_04",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_05_candidate.png",
+      "candidate_box": [
+        41,
+        101,
+        179,
+        211
+      ],
+      "defect_region": [
+        59,
+        175,
+        162,
+        189
+      ],
+      "defect_type": "text",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_05",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_06_candidate.png",
+      "candidate_box": [
+        44,
+        101,
+        182,
+        211
+      ],
+      "defect_region": [
+        62,
+        155,
+        165,
+        169
+      ],
+      "defect_type": "logo",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_06",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_07_candidate.png",
+      "candidate_box": [
+        41,
+        101,
+        179,
+        211
+      ],
+      "defect_region": [
+        150,
+        138,
+        172,
+        173
+      ],
+      "defect_type": "shape",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_07",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR006_08_candidate.png",
+      "candidate_box": [
+        41,
+        100,
+        179,
+        210
+      ],
+      "defect_region": [
+        59,
+        174,
+        162,
+        188
+      ],
+      "defect_type": "text",
+      "family_id": "F03",
+      "label": 1,
+      "original": "lab04/data/images/COSM006_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR006_08",
+      "product_id": "COSM006",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_01_candidate.png",
+      "candidate_box": [
+        60,
+        53,
+        162,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_01",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_02_candidate.png",
+      "candidate_box": [
+        61,
+        52,
+        163,
+        240
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_02",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_03_candidate.png",
+      "candidate_box": [
+        62,
+        54,
+        164,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_03",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_04_candidate.png",
+      "candidate_box": [
+        62,
+        55,
+        164,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_04",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_05_candidate.png",
+      "candidate_box": [
+        62,
+        56,
+        164,
+        244
+      ],
+      "defect_region": [
+        89,
+        145,
+        138,
+        159
+      ],
+      "defect_type": "text",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_05",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_06_candidate.png",
+      "candidate_box": [
+        61,
+        56,
+        163,
+        244
+      ],
+      "defect_region": [
+        88,
+        125,
+        137,
+        139
+      ],
+      "defect_type": "logo",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_06",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_07_candidate.png",
+      "candidate_box": [
+        60,
+        54,
+        162,
+        242
+      ],
+      "defect_region": [
+        141,
+        99,
+        160,
+        142
+      ],
+      "defect_type": "shape",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_07",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR007_08_candidate.png",
+      "candidate_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "defect_region": [
+        88,
+        143,
+        137,
+        157
+      ],
+      "defect_type": "text",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM007_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR007_08",
+      "product_id": "COSM007",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_01_candidate.png",
+      "candidate_box": [
+        56,
+        47,
+        170,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_01",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_02_candidate.png",
+      "candidate_box": [
+        53,
+        46,
+        167,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_02",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_03_candidate.png",
+      "candidate_box": [
+        57,
+        46,
+        171,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_03",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_04_candidate.png",
+      "candidate_box": [
+        56,
+        45,
+        170,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F04",
+      "label": 0,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_04",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_05_candidate.png",
+      "candidate_box": [
+        55,
+        48,
+        169,
+        244
+      ],
+      "defect_region": [
+        79,
+        115,
+        146,
+        129
+      ],
+      "defect_type": "text",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_05",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_06_candidate.png",
+      "candidate_box": [
+        54,
+        48,
+        168,
+        244
+      ],
+      "defect_region": [
+        78,
+        95,
+        145,
+        109
+      ],
+      "defect_type": "logo",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_06",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_07_candidate.png",
+      "candidate_box": [
+        56,
+        46,
+        170,
+        242
+      ],
+      "defect_region": [
+        149,
+        91,
+        168,
+        134
+      ],
+      "defect_type": "shape",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_07",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR008_08_candidate.png",
+      "candidate_box": [
+        57,
+        46,
+        171,
+        242
+      ],
+      "defect_region": [
+        81,
+        113,
+        148,
+        127
+      ],
+      "defect_type": "text",
+      "family_id": "F04",
+      "label": 1,
+      "original": "lab04/data/images/COSM008_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR008_08",
+      "product_id": "COSM008",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_01_candidate.png",
+      "candidate_box": [
+        44,
+        99,
+        182,
+        209
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_01",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_02_candidate.png",
+      "candidate_box": [
+        44,
+        100,
+        182,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_02",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_03_candidate.png",
+      "candidate_box": [
+        41,
+        101,
+        179,
+        211
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_03",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_04_candidate.png",
+      "candidate_box": [
+        45,
+        101,
+        183,
+        211
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_04",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_05_candidate.png",
+      "candidate_box": [
+        41,
+        103,
+        179,
+        213
+      ],
+      "defect_region": [
+        59,
+        177,
+        162,
+        191
+      ],
+      "defect_type": "text",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_05",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_06_candidate.png",
+      "candidate_box": [
+        42,
+        99,
+        180,
+        209
+      ],
+      "defect_region": [
+        60,
+        153,
+        163,
+        167
+      ],
+      "defect_type": "logo",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_06",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_07_candidate.png",
+      "candidate_box": [
+        43,
+        100,
+        181,
+        210
+      ],
+      "defect_region": [
+        152,
+        137,
+        174,
+        172
+      ],
+      "defect_type": "shape",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_07",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR009_08_candidate.png",
+      "candidate_box": [
+        41,
+        102,
+        179,
+        212
+      ],
+      "defect_region": [
+        59,
+        176,
+        162,
+        190
+      ],
+      "defect_type": "text",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM009_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR009_08",
+      "product_id": "COSM009",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_01_candidate.png",
+      "candidate_box": [
+        61,
+        56,
+        163,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_01",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_02_candidate.png",
+      "candidate_box": [
+        60,
+        54,
+        162,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_02",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_03_candidate.png",
+      "candidate_box": [
+        61,
+        56,
+        163,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_03",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_04_candidate.png",
+      "candidate_box": [
+        62,
+        54,
+        164,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F05",
+      "label": 0,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_04",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_05_candidate.png",
+      "candidate_box": [
+        61,
+        52,
+        163,
+        240
+      ],
+      "defect_region": [
+        88,
+        141,
+        137,
+        155
+      ],
+      "defect_type": "text",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_05",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_06_candidate.png",
+      "candidate_box": [
+        63,
+        55,
+        165,
+        243
+      ],
+      "defect_region": [
+        90,
+        124,
+        139,
+        138
+      ],
+      "defect_type": "logo",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_06",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_07_candidate.png",
+      "candidate_box": [
+        61,
+        53,
+        163,
+        241
+      ],
+      "defect_region": [
+        142,
+        98,
+        161,
+        141
+      ],
+      "defect_type": "shape",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_07",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR010_08_candidate.png",
+      "candidate_box": [
+        62,
+        52,
+        164,
+        240
+      ],
+      "defect_region": [
+        89,
+        141,
+        138,
+        155
+      ],
+      "defect_type": "text",
+      "family_id": "F05",
+      "label": 1,
+      "original": "lab04/data/images/COSM010_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR010_08",
+      "product_id": "COSM010",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_01_candidate.png",
+      "candidate_box": [
+        56,
+        48,
+        170,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_01",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_02_candidate.png",
+      "candidate_box": [
+        53,
+        47,
+        167,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_02",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_03_candidate.png",
+      "candidate_box": [
+        54,
+        49,
+        168,
+        245
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_03",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_04_candidate.png",
+      "candidate_box": [
+        53,
+        49,
+        167,
+        245
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_04",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_05_candidate.png",
+      "candidate_box": [
+        55,
+        46,
+        169,
+        242
+      ],
+      "defect_region": [
+        79,
+        113,
+        146,
+        127
+      ],
+      "defect_type": "text",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_05",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_06_candidate.png",
+      "candidate_box": [
+        54,
+        49,
+        168,
+        245
+      ],
+      "defect_region": [
+        78,
+        96,
+        145,
+        110
+      ],
+      "defect_type": "logo",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_06",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_07_candidate.png",
+      "candidate_box": [
+        54,
+        46,
+        168,
+        242
+      ],
+      "defect_region": [
+        147,
+        91,
+        166,
+        134
+      ],
+      "defect_type": "shape",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_07",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR011_08_candidate.png",
+      "candidate_box": [
+        57,
+        47,
+        171,
+        243
+      ],
+      "defect_region": [
+        81,
+        114,
+        148,
+        128
+      ],
+      "defect_type": "text",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM011_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR011_08",
+      "product_id": "COSM011",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_01_candidate.png",
+      "candidate_box": [
+        45,
+        100,
+        183,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_01",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_02_candidate.png",
+      "candidate_box": [
+        43,
+        103,
+        181,
+        213
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_02",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_03_candidate.png",
+      "candidate_box": [
+        42,
+        100,
+        180,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_03",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_04_candidate.png",
+      "candidate_box": [
+        41,
+        100,
+        179,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F06",
+      "label": 0,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_04",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_05_candidate.png",
+      "candidate_box": [
+        44,
+        101,
+        182,
+        211
+      ],
+      "defect_region": [
+        62,
+        175,
+        165,
+        189
+      ],
+      "defect_type": "text",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_05",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_06_candidate.png",
+      "candidate_box": [
+        45,
+        101,
+        183,
+        211
+      ],
+      "defect_region": [
+        63,
+        155,
+        166,
+        169
+      ],
+      "defect_type": "logo",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_06",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_07_candidate.png",
+      "candidate_box": [
+        42,
+        102,
+        180,
+        212
+      ],
+      "defect_region": [
+        151,
+        139,
+        173,
+        174
+      ],
+      "defect_type": "shape",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_07",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR012_08_candidate.png",
+      "candidate_box": [
+        41,
+        100,
+        179,
+        210
+      ],
+      "defect_region": [
+        59,
+        174,
+        162,
+        188
+      ],
+      "defect_type": "text",
+      "family_id": "F06",
+      "label": 1,
+      "original": "lab04/data/images/COSM012_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR012_08",
+      "product_id": "COSM012",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_01_candidate.png",
+      "candidate_box": [
+        62,
+        56,
+        164,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_01",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_02_candidate.png",
+      "candidate_box": [
+        59,
+        56,
+        161,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_02",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_03_candidate.png",
+      "candidate_box": [
+        63,
+        55,
+        165,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_03",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_04_candidate.png",
+      "candidate_box": [
+        63,
+        54,
+        165,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_04",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_05_candidate.png",
+      "candidate_box": [
+        60,
+        52,
+        162,
+        240
+      ],
+      "defect_region": [
+        87,
+        141,
+        136,
+        155
+      ],
+      "defect_type": "text",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_05",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_06_candidate.png",
+      "candidate_box": [
+        61,
+        53,
+        163,
+        241
+      ],
+      "defect_region": [
+        88,
+        122,
+        137,
+        136
+      ],
+      "defect_type": "logo",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_06",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_07_candidate.png",
+      "candidate_box": [
+        63,
+        54,
+        165,
+        242
+      ],
+      "defect_region": [
+        144,
+        99,
+        163,
+        142
+      ],
+      "defect_type": "shape",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_07",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR013_08_candidate.png",
+      "candidate_box": [
+        60,
+        52,
+        162,
+        240
+      ],
+      "defect_region": [
+        87,
+        141,
+        136,
+        155
+      ],
+      "defect_type": "text",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM013_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR013_08",
+      "product_id": "COSM013",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_01_candidate.png",
+      "candidate_box": [
+        53,
+        49,
+        167,
+        245
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_01",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_02_candidate.png",
+      "candidate_box": [
+        55,
+        46,
+        169,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_02",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_03_candidate.png",
+      "candidate_box": [
+        55,
+        46,
+        169,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_03",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_04_candidate.png",
+      "candidate_box": [
+        53,
+        48,
+        167,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F07",
+      "label": 0,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_04",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_05_candidate.png",
+      "candidate_box": [
+        53,
+        46,
+        167,
+        242
+      ],
+      "defect_region": [
+        77,
+        113,
+        144,
+        127
+      ],
+      "defect_type": "text",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_05",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_06_candidate.png",
+      "candidate_box": [
+        56,
+        45,
+        170,
+        241
+      ],
+      "defect_region": [
+        80,
+        92,
+        147,
+        106
+      ],
+      "defect_type": "logo",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_06",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_07_candidate.png",
+      "candidate_box": [
+        54,
+        47,
+        168,
+        243
+      ],
+      "defect_region": [
+        147,
+        92,
+        166,
+        135
+      ],
+      "defect_type": "shape",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_07",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR014_08_candidate.png",
+      "candidate_box": [
+        56,
+        45,
+        170,
+        241
+      ],
+      "defect_region": [
+        80,
+        112,
+        147,
+        126
+      ],
+      "defect_type": "text",
+      "family_id": "F07",
+      "label": 1,
+      "original": "lab04/data/images/COSM014_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR014_08",
+      "product_id": "COSM014",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_01_candidate.png",
+      "candidate_box": [
+        42,
+        101,
+        180,
+        211
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_01",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_02_candidate.png",
+      "candidate_box": [
+        44,
+        100,
+        182,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_02",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_03_candidate.png",
+      "candidate_box": [
+        44,
+        103,
+        182,
+        213
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_03",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_04_candidate.png",
+      "candidate_box": [
+        45,
+        103,
+        183,
+        213
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_04",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_05_candidate.png",
+      "candidate_box": [
+        44,
+        103,
+        182,
+        213
+      ],
+      "defect_region": [
+        62,
+        177,
+        165,
+        191
+      ],
+      "defect_type": "text",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_05",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_06_candidate.png",
+      "candidate_box": [
+        44,
+        100,
+        182,
+        210
+      ],
+      "defect_region": [
+        62,
+        154,
+        165,
+        168
+      ],
+      "defect_type": "logo",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_06",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_07_candidate.png",
+      "candidate_box": [
+        44,
+        100,
+        182,
+        210
+      ],
+      "defect_region": [
+        153,
+        137,
+        175,
+        172
+      ],
+      "defect_type": "shape",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_07",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR015_08_candidate.png",
+      "candidate_box": [
+        44,
+        101,
+        182,
+        211
+      ],
+      "defect_region": [
+        62,
+        175,
+        165,
+        189
+      ],
+      "defect_type": "text",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM015_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR015_08",
+      "product_id": "COSM015",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_01_candidate.png",
+      "candidate_box": [
+        62,
+        52,
+        164,
+        240
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_01",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_02_candidate.png",
+      "candidate_box": [
+        63,
+        54,
+        165,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_02",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_03_candidate.png",
+      "candidate_box": [
+        62,
+        55,
+        164,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_03",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_04_candidate.png",
+      "candidate_box": [
+        63,
+        55,
+        165,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F08",
+      "label": 0,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_04",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_05_candidate.png",
+      "candidate_box": [
+        63,
+        52,
+        165,
+        240
+      ],
+      "defect_region": [
+        90,
+        141,
+        139,
+        155
+      ],
+      "defect_type": "text",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_05",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_06_candidate.png",
+      "candidate_box": [
+        61,
+        53,
+        163,
+        241
+      ],
+      "defect_region": [
+        88,
+        122,
+        137,
+        136
+      ],
+      "defect_type": "logo",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_06",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_07_candidate.png",
+      "candidate_box": [
+        62,
+        56,
+        164,
+        244
+      ],
+      "defect_region": [
+        143,
+        101,
+        162,
+        144
+      ],
+      "defect_type": "shape",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_07",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR016_08_candidate.png",
+      "candidate_box": [
+        60,
+        55,
+        162,
+        243
+      ],
+      "defect_region": [
+        87,
+        144,
+        136,
+        158
+      ],
+      "defect_type": "text",
+      "family_id": "F08",
+      "label": 1,
+      "original": "lab04/data/images/COSM016_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR016_08",
+      "product_id": "COSM016",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_01_candidate.png",
+      "candidate_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_01",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_02_candidate.png",
+      "candidate_box": [
+        55,
+        49,
+        169,
+        245
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_02",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_03_candidate.png",
+      "candidate_box": [
+        57,
+        48,
+        171,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_03",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_04_candidate.png",
+      "candidate_box": [
+        54,
+        49,
+        168,
+        245
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_04",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_05_candidate.png",
+      "candidate_box": [
+        57,
+        48,
+        171,
+        244
+      ],
+      "defect_region": [
+        81,
+        115,
+        148,
+        129
+      ],
+      "defect_type": "text",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_05",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_06_candidate.png",
+      "candidate_box": [
+        56,
+        48,
+        170,
+        244
+      ],
+      "defect_region": [
+        80,
+        95,
+        147,
+        109
+      ],
+      "defect_type": "logo",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_06",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_07_candidate.png",
+      "candidate_box": [
+        53,
+        48,
+        167,
+        244
+      ],
+      "defect_region": [
+        146,
+        93,
+        165,
+        136
+      ],
+      "defect_type": "shape",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_07",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR017_08_candidate.png",
+      "candidate_box": [
+        55,
+        48,
+        169,
+        244
+      ],
+      "defect_region": [
+        79,
+        115,
+        146,
+        129
+      ],
+      "defect_type": "text",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM017_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR017_08",
+      "product_id": "COSM017",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_01_candidate.png",
+      "candidate_box": [
+        41,
+        102,
+        179,
+        212
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_01",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_02_candidate.png",
+      "candidate_box": [
+        45,
+        101,
+        183,
+        211
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_02",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_03_candidate.png",
+      "candidate_box": [
+        44,
+        101,
+        182,
+        211
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_03",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_04_candidate.png",
+      "candidate_box": [
+        44,
+        99,
+        182,
+        209
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F09",
+      "label": 0,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_04",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_05_candidate.png",
+      "candidate_box": [
+        45,
+        103,
+        183,
+        213
+      ],
+      "defect_region": [
+        63,
+        177,
+        166,
+        191
+      ],
+      "defect_type": "text",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_05",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_06_candidate.png",
+      "candidate_box": [
+        41,
+        99,
+        179,
+        209
+      ],
+      "defect_region": [
+        59,
+        153,
+        162,
+        167
+      ],
+      "defect_type": "logo",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_06",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_07_candidate.png",
+      "candidate_box": [
+        41,
+        102,
+        179,
+        212
+      ],
+      "defect_region": [
+        150,
+        139,
+        172,
+        174
+      ],
+      "defect_type": "shape",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_07",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR018_08_candidate.png",
+      "candidate_box": [
+        45,
+        101,
+        183,
+        211
+      ],
+      "defect_region": [
+        63,
+        175,
+        166,
+        189
+      ],
+      "defect_type": "text",
+      "family_id": "F09",
+      "label": 1,
+      "original": "lab04/data/images/COSM018_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR018_08",
+      "product_id": "COSM018",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_01_candidate.png",
+      "candidate_box": [
+        59,
+        54,
+        161,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_01",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_02_candidate.png",
+      "candidate_box": [
+        61,
+        56,
+        163,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_02",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_03_candidate.png",
+      "candidate_box": [
+        62,
+        55,
+        164,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_03",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_04_candidate.png",
+      "candidate_box": [
+        63,
+        52,
+        165,
+        240
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_04",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_05_candidate.png",
+      "candidate_box": [
+        62,
+        54,
+        164,
+        242
+      ],
+      "defect_region": [
+        89,
+        143,
+        138,
+        157
+      ],
+      "defect_type": "text",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_05",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_06_candidate.png",
+      "candidate_box": [
+        60,
+        54,
+        162,
+        242
+      ],
+      "defect_region": [
+        87,
+        123,
+        136,
+        137
+      ],
+      "defect_type": "logo",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_06",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_07_candidate.png",
+      "candidate_box": [
+        59,
+        54,
+        161,
+        242
+      ],
+      "defect_region": [
+        140,
+        99,
+        159,
+        142
+      ],
+      "defect_type": "shape",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_07",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR019_08_candidate.png",
+      "candidate_box": [
+        60,
+        56,
+        162,
+        244
+      ],
+      "defect_region": [
+        87,
+        145,
+        136,
+        159
+      ],
+      "defect_type": "text",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM019_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR019_08",
+      "product_id": "COSM019",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_01_candidate.png",
+      "candidate_box": [
+        54,
+        46,
+        168,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_01",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_02_candidate.png",
+      "candidate_box": [
+        56,
+        46,
+        170,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_02",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_03_candidate.png",
+      "candidate_box": [
+        53,
+        45,
+        167,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_03",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_04_candidate.png",
+      "candidate_box": [
+        53,
+        45,
+        167,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F10",
+      "label": 0,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_04",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_05_candidate.png",
+      "candidate_box": [
+        56,
+        47,
+        170,
+        243
+      ],
+      "defect_region": [
+        80,
+        114,
+        147,
+        128
+      ],
+      "defect_type": "text",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_05",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_06_candidate.png",
+      "candidate_box": [
+        56,
+        46,
+        170,
+        242
+      ],
+      "defect_region": [
+        80,
+        93,
+        147,
+        107
+      ],
+      "defect_type": "logo",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_06",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_07_candidate.png",
+      "candidate_box": [
+        53,
+        46,
+        167,
+        242
+      ],
+      "defect_region": [
+        146,
+        91,
+        165,
+        134
+      ],
+      "defect_type": "shape",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_07",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR020_08_candidate.png",
+      "candidate_box": [
+        55,
+        46,
+        169,
+        242
+      ],
+      "defect_region": [
+        79,
+        113,
+        146,
+        127
+      ],
+      "defect_type": "text",
+      "family_id": "F10",
+      "label": 1,
+      "original": "lab04/data/images/COSM020_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR020_08",
+      "product_id": "COSM020",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_01_candidate.png",
+      "candidate_box": [
+        44,
+        103,
+        182,
+        213
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_01",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_02_candidate.png",
+      "candidate_box": [
+        45,
+        103,
+        183,
+        213
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_02",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_03_candidate.png",
+      "candidate_box": [
+        44,
+        102,
+        182,
+        212
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_03",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_04_candidate.png",
+      "candidate_box": [
+        42,
+        99,
+        180,
+        209
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_04",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_05_candidate.png",
+      "candidate_box": [
+        42,
+        101,
+        180,
+        211
+      ],
+      "defect_region": [
+        60,
+        175,
+        163,
+        189
+      ],
+      "defect_type": "text",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_05",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_06_candidate.png",
+      "candidate_box": [
+        45,
+        99,
+        183,
+        209
+      ],
+      "defect_region": [
+        63,
+        153,
+        166,
+        167
+      ],
+      "defect_type": "logo",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_06",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_07_candidate.png",
+      "candidate_box": [
+        45,
+        102,
+        183,
+        212
+      ],
+      "defect_region": [
+        154,
+        139,
+        176,
+        174
+      ],
+      "defect_type": "shape",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_07",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR021_08_candidate.png",
+      "candidate_box": [
+        41,
+        103,
+        179,
+        213
+      ],
+      "defect_region": [
+        59,
+        177,
+        162,
+        191
+      ],
+      "defect_type": "text",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM021_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR021_08",
+      "product_id": "COSM021",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_01_candidate.png",
+      "candidate_box": [
+        63,
+        54,
+        165,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_01",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_02_candidate.png",
+      "candidate_box": [
+        60,
+        53,
+        162,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_02",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_03_candidate.png",
+      "candidate_box": [
+        63,
+        53,
+        165,
+        241
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_03",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_04_candidate.png",
+      "candidate_box": [
+        61,
+        52,
+        163,
+        240
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F11",
+      "label": 0,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_04",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_05_candidate.png",
+      "candidate_box": [
+        62,
+        56,
+        164,
+        244
+      ],
+      "defect_region": [
+        89,
+        145,
+        138,
+        159
+      ],
+      "defect_type": "text",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_05",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_06_candidate.png",
+      "candidate_box": [
+        61,
+        52,
+        163,
+        240
+      ],
+      "defect_region": [
+        88,
+        121,
+        137,
+        135
+      ],
+      "defect_type": "logo",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_06",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_07_candidate.png",
+      "candidate_box": [
+        63,
+        55,
+        165,
+        243
+      ],
+      "defect_region": [
+        144,
+        100,
+        163,
+        143
+      ],
+      "defect_type": "shape",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_07",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR022_08_candidate.png",
+      "candidate_box": [
+        62,
+        52,
+        164,
+        240
+      ],
+      "defect_region": [
+        89,
+        141,
+        138,
+        155
+      ],
+      "defect_type": "text",
+      "family_id": "F11",
+      "label": 1,
+      "original": "lab04/data/images/COSM022_original.png",
+      "original_box": [
+        61,
+        54,
+        163,
+        242
+      ],
+      "pair_id": "PAIR022_08",
+      "product_id": "COSM022",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_01_candidate.png",
+      "candidate_box": [
+        53,
+        48,
+        167,
+        244
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_01",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_02_candidate.png",
+      "candidate_box": [
+        54,
+        46,
+        168,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_02",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_03_candidate.png",
+      "candidate_box": [
+        54,
+        46,
+        168,
+        242
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_03",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_04_candidate.png",
+      "candidate_box": [
+        54,
+        47,
+        168,
+        243
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_04",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_05_candidate.png",
+      "candidate_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "defect_region": [
+        79,
+        114,
+        146,
+        128
+      ],
+      "defect_type": "text",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_05",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_06_candidate.png",
+      "candidate_box": [
+        57,
+        47,
+        171,
+        243
+      ],
+      "defect_region": [
+        81,
+        94,
+        148,
+        108
+      ],
+      "defect_type": "logo",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_06",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_07_candidate.png",
+      "candidate_box": [
+        54,
+        47,
+        168,
+        243
+      ],
+      "defect_region": [
+        147,
+        92,
+        166,
+        135
+      ],
+      "defect_type": "shape",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_07",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR023_08_candidate.png",
+      "candidate_box": [
+        56,
+        46,
+        170,
+        242
+      ],
+      "defect_region": [
+        80,
+        113,
+        147,
+        127
+      ],
+      "defect_type": "text",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM023_original.png",
+      "original_box": [
+        55,
+        47,
+        169,
+        243
+      ],
+      "pair_id": "PAIR023_08",
+      "product_id": "COSM023",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_01_candidate.png",
+      "candidate_box": [
+        44,
+        100,
+        182,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_01",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_02_candidate.png",
+      "candidate_box": [
+        43,
+        103,
+        181,
+        213
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_02",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "background_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_03_candidate.png",
+      "candidate_box": [
+        42,
+        103,
+        180,
+        213
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_03",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_04_candidate.png",
+      "candidate_box": [
+        45,
+        100,
+        183,
+        210
+      ],
+      "defect_region": null,
+      "defect_type": "none",
+      "family_id": "F12",
+      "label": 0,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_04",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "lighting_down"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_05_candidate.png",
+      "candidate_box": [
+        41,
+        103,
+        179,
+        213
+      ],
+      "defect_region": [
+        59,
+        177,
+        162,
+        191
+      ],
+      "defect_type": "text",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_05",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_warm"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_06_candidate.png",
+      "candidate_box": [
+        43,
+        100,
+        181,
+        210
+      ],
+      "defect_region": [
+        61,
+        154,
+        164,
+        168
+      ],
+      "defect_type": "logo",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_06",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "logo_cool"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_07_candidate.png",
+      "candidate_box": [
+        41,
+        102,
+        179,
+        212
+      ],
+      "defect_region": [
+        150,
+        139,
+        172,
+        174
+      ],
+      "defect_type": "shape",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_07",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "shape_up"
+    },
+    {
+      "candidate": "lab04/data/images/PAIR024_08_candidate.png",
+      "candidate_box": [
+        42,
+        103,
+        180,
+        213
+      ],
+      "defect_region": [
+        60,
+        177,
+        163,
+        191
+      ],
+      "defect_type": "text",
+      "family_id": "F12",
+      "label": 1,
+      "original": "lab04/data/images/COSM024_original.png",
+      "original_box": [
+        43,
+        101,
+        181,
+        211
+      ],
+      "pair_id": "PAIR024_08",
+      "product_id": "COSM024",
+      "rights_status": "project_generated",
+      "source": "controlled_synthetic",
+      "variation": "text_down"
+    }
+  ],
+  "seed": 20261124
+}

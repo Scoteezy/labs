@@ -1,248 +1,240 @@
-"""TF-IDF baseline for the fixed validation split of Lab 06."""
+"""Baseline SSIM detector for controlled packaging-pair pilot data.
+
+Run from the repository root:
+    ../venv/bin/python -m lab07.baseline run
+    ../venv/bin/python -m lab07.baseline check
+"""
+
+from __future__ import annotations
 
 import argparse
 import csv
 import hashlib
-import io
 import json
 import math
 import platform
-import re
-import unicodedata
-from collections import Counter
-from dataclasses import dataclass
+import sys
 from pathlib import Path
-from statistics import mean
+from typing import Any, Iterable
+
+import numpy as np
+from PIL import Image
+from skimage.metrics import structural_similarity
+
+from lab06.prepare import prepare_pair
+
 
 ROOT = Path(__file__).resolve().parent
-DATA = ROOT.parent / "lab06" / "data"
+REPOSITORY = ROOT.parent
+PREPARED = REPOSITORY / "lab06" / "data" / "prepared.json"
 RESULTS = ROOT / "results"
-SETTINGS = ROOT / "settings.json"
+CONFIG = ROOT / "config.json"
 
 
-@dataclass
-class Benchmark:
-    weights: dict[str, float]
-    descriptions: dict[str, str]
-    queries: list[dict]
-    relevance: dict[str, dict[str, int]]
+def stable_json(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
 
 
-def sha256(content: bytes) -> str:
-    return hashlib.sha256(content).hexdigest()
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def load_validation(settings: dict) -> Benchmark:
-    contents = {}
-    for filename, digest in settings["input_sha256"].items():
-        content = (DATA / filename).read_bytes()
-        if sha256(content) != digest:
-            raise ValueError(f"Контрольная сумма ЛР 6 не совпала для {filename}")
-        contents[filename] = content
-
-    fit_split = settings["fit_split"]
-    evaluation_split = settings["evaluation_split"]
-    splits = json.loads(contents["split.json"])
-    idf = json.loads(contents["idf.json"])
-    if idf["fit_split"] != fit_split or idf["train_ids"] != splits[fit_split]["poster_ids"]:
-        raise ValueError("Разбиение обучения IDF расходится с зафиксированным split")
-
-    selected = splits[evaluation_split]
-    descriptions = {
-        row["id"]: row["description"]
-        for row in json.loads(contents["clean.json"])
-        if row["split"] == evaluation_split and row["rights_status"] == "demo_allowed"
-    }
-    by_query = {
-        row["id"]: row
-        for row in json.loads(contents["queries.json"])
-        if row["split"] == evaluation_split
-    }
-    if descriptions.keys() != set(selected["poster_ids"]):
-        raise ValueError("Набор допущенных карточек расходится с зафиксированным split")
-    if by_query.keys() != set(selected["query_ids"]):
-        raise ValueError("Набор запросов расходится с зафиксированным split")
-
-    relevance = {query_id: {} for query_id in selected["query_ids"]}
-    for row in csv.DictReader(io.StringIO(contents["qrels.csv"].decode("utf-8"))):
-        if row["split"] != evaluation_split:
-            continue
-        grades = relevance[row["query_id"]]
-        poster_id, grade = row["poster_id"], int(row["relevance"])
-        if poster_id in grades or grade not in (0, 1, 2):
-            raise ValueError(f"Некорректная оценка пары {row['query_id']}/{poster_id}")
-        grades[poster_id] = grade
-    if any(grades.keys() != descriptions.keys() for grades in relevance.values()):
-        raise ValueError("Разметка должна покрывать все пары validation")
-
-    queries = [by_query[query_id] for query_id in selected["query_ids"]]
-    return Benchmark(idf["weights"], descriptions, queries, relevance)
+def baseline_score(reference: np.ndarray, candidate: np.ndarray) -> float:
+    """Return difference score in [0, 1], where larger means more change."""
+    if reference.shape != candidate.shape or reference.ndim != 2:
+        raise ValueError("Ожидаются два выровненных двумерных фрагмента одного размера")
+    if min(reference.shape) < 7:
+        raise ValueError("Фрагмент слишком мал для SSIM")
+    score = 1.0 - structural_similarity(reference, candidate, data_range=1.0)
+    return round(float(max(0.0, min(1.0, score))), 12)
 
 
-def tokens(text: str) -> list[str]:
-    """Match the frozen Lab 06 tokenizer used to fit IDF."""
-    normalized = unicodedata.normalize("NFKC", text).casefold()
-    return re.findall(r"[a-zа-яё0-9]+", normalized)
+def load_config() -> dict[str, Any]:
+    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    if config["metric"] != "f1_critical_change" or config["positive_label"] != 1:
+        raise ValueError("Конфигурация baseline не соответствует метрике критичного изменения")
+    return config
 
 
-def vectorize(terms: list[str], weights: dict[str, float]) -> dict[str, float]:
-    counts = Counter(terms)
-    values = {term: counts[term] * weights[term] for term in sorted(counts) if term in weights}
-    norm = math.sqrt(sum(value * value for value in values.values()))
-    return {term: round(value / norm, 12) for term, value in values.items()} if norm else {}
+def load_pairs() -> list[dict[str, Any]]:
+    payload = json.loads(PREPARED.read_text(encoding="utf-8"))
+    pairs = payload["pairs"]
+    required = {"pair_id", "original", "candidate", "original_box", "candidate_box", "label", "split"}
+    if not pairs or any(required - row.keys() for row in pairs):
+        raise ValueError("prepared.json не содержит обязательных полей")
+    if any(row["label"] not in (0, 1) or row["split"] not in ("train", "validation", "test") for row in pairs):
+        raise ValueError("Некорректная метка или разбиение")
+    return pairs
 
 
-def rank(query: dict[str, float], index: dict[str, dict[str, float]], k: int) -> list[dict]:
-    if not query:
-        return []
-    hits = []
-    for poster_id, vector in index.items():
-        score = round(math.fsum(value * vector.get(term, 0.0) for term, value in query.items()), 12)
-        if score > 0:
-            hits.append({"poster_id": poster_id, "score": score})
-    return sorted(hits, key=lambda hit: (-hit["score"], hit["poster_id"]))[:k]
+def prepared_images(row: dict[str, Any]) -> tuple[np.ndarray, np.ndarray]:
+    with Image.open(REPOSITORY / row["original"]) as original, Image.open(REPOSITORY / row["candidate"]) as candidate:
+        return prepare_pair(original, candidate, row["original_box"], row["candidate_box"])
 
 
-def dcg(grades: list[int], k: int) -> float:
-    return sum((2**grade - 1) / math.log2(position + 2) for position, grade in enumerate(grades[:k]))
-
-
-def evaluate_ranking(returned: list[int], truth: list[int], k: int) -> dict:
-    ideal_gain = dcg(sorted(truth, reverse=True), k)
-    relevant = sum(grade > 0 for grade in truth)
-    return {
-        "ndcg": dcg(returned, k) / ideal_gain if ideal_gain else 0.0,
-        "recall": sum(grade > 0 for grade in returned[:k]) / relevant if relevant else 0.0,
-    }
-
-
-def evaluate(benchmark: Benchmark, index: dict, k: int) -> list[dict]:
-    cases = []
-    for query in benchmark.queries:
-        terms = tokens(query["text"])
-        query_vector = vectorize(terms, benchmark.weights)
-        grades = benchmark.relevance[query["id"]]
-        hits = rank(query_vector, index, k)
-        results = [
-            {
-                **hit,
-                "relevance": grades[hit["poster_id"]],
-                "matched_terms": sorted(query_vector.keys() & index[hit["poster_id"]].keys()),
-            }
-            for hit in hits
-        ]
-        cases.append({
-            "query_id": query["id"],
-            "query": query["text"],
-            "segment": query["kind"],
-            "known_terms": list(dict.fromkeys(term for term in terms if term in benchmark.weights)),
-            "unknown_terms": list(dict.fromkeys(term for term in terms if term not in benchmark.weights)),
-            "results": results,
-            "qrels": grades,
-            "metrics": evaluate_ranking([hit["relevance"] for hit in results], list(grades.values()), k),
-        })
-    return cases
-
-
-def csv_text(rows: list[dict]) -> str:
-    with io.StringIO(newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=rows[0].keys(), lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
-        return stream.getvalue()
-
-
-def json_text(data) -> str:
-    return json.dumps(data, ensure_ascii=False, indent=2) + "\n"
-
-
-def reports(cases: list[dict], settings: dict, settings_hash: str) -> dict[str, str]:
+def score_rows(pairs: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     rows = []
-    for case in cases:
+    for pair in pairs:
+        reference, candidate = prepared_images(pair)
         rows.append({
-            "query_id": case["query_id"],
-            "query": case["query"],
-            "segment": case["segment"],
-            "ndcg": f"{case['metrics']['ndcg']:.6f}",
-            "recall": f"{case['metrics']['recall']:.6f}",
-            "returned": " ".join(hit["poster_id"] for hit in case["results"]),
-            "grades": " ".join(str(hit["relevance"]) for hit in case["results"]),
+            "pair_id": pair["pair_id"],
+            "product_id": pair["product_id"],
+            "family_id": pair["family_id"],
+            "split": pair["split"],
+            "label": pair["label"],
+            "defect_type": pair["defect_type"],
+            "variation": pair["variation"],
+            "score": baseline_score(reference, candidate),
         })
+    return sorted(rows, key=lambda row: row["pair_id"])
 
-    groups = {"all": cases}
-    for segment in sorted({case["segment"] for case in cases}):
-        groups[segment] = [case for case in cases if case["segment"] == segment]
-    summary = [
-        {
-            "segment": segment,
-            "queries": len(group),
-            "ndcg": f"{mean(case['metrics']['ndcg'] for case in group):.6f}",
-            "recall": f"{mean(case['metrics']['recall'] for case in group):.6f}",
-            "empty_results": sum(not case["results"] for case in group),
-        }
-        for segment, group in groups.items()
-    ]
-    details = {
-        "dataset_version": settings["dataset_version"],
-        "split": settings["evaluation_split"],
-        "k": settings["k"],
-        "settings_sha256": settings_hash,
-        "cases": cases,
-    }
+
+def confusion(rows: Iterable[dict[str, Any]], threshold: float) -> dict[str, int]:
+    counts = {"tp": 0, "fp": 0, "tn": 0, "fn": 0}
+    for row in rows:
+        predicted = int(row["score"] >= threshold)
+        actual = row["label"]
+        key = "tp" if predicted and actual else "fp" if predicted else "fn" if actual else "tn"
+        counts[key] += 1
+    return counts
+
+
+def metrics(rows: Iterable[dict[str, Any]], threshold: float) -> dict[str, Any]:
+    rows = list(rows)
+    counts = confusion(rows, threshold)
+    tp, fp, tn, fn = (counts[key] for key in ("tp", "fp", "tn", "fn"))
+    precision = tp / (tp + fp) if tp + fp else 0.0
+    recall = tp / (tp + fn) if tp + fn else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+    specificity = tn / (tn + fp) if tn + fp else 0.0
     return {
-        "validation_baseline.csv": csv_text(rows),
-        "validation_baseline_summary.csv": csv_text(summary),
-        "validation_baseline_detail.json": json_text(details),
+        "threshold": threshold,
+        "cases": len(rows),
+        "positive_cases": sum(row["label"] for row in rows),
+        "precision": round(precision, 6),
+        "recall": round(recall, 6),
+        "f1": round(f1, 6),
+        "specificity": round(specificity, 6),
+        **counts,
     }
+
+
+def candidate_thresholds(rows: list[dict[str, Any]]) -> list[float]:
+    unique = sorted({row["score"] for row in rows})
+    if not unique:
+        return []
+    values = {0.0, 1.0}
+    for lower, higher in zip(unique, unique[1:]):
+        values.add(round((lower + higher) / 2, 12))
+    values.update(unique)
+    return sorted(values)
+
+
+def choose_threshold(rows: list[dict[str, Any]]) -> tuple[float, dict[str, Any]]:
+    if not rows or len({row["label"] for row in rows}) != 2:
+        raise ValueError("Для выбора порога на validation нужны оба класса")
+    options = [(threshold, metrics(rows, threshold)) for threshold in candidate_thresholds(rows)]
+    return max(options, key=lambda item: (item[1]["f1"], item[1]["recall"], item[1]["specificity"], -item[0]))
+
+
+def csv_text(rows: list[dict[str, Any]]) -> str:
+    fieldnames = ["pair_id", "product_id", "family_id", "split", "label", "defect_type", "variation", "score"]
+    from io import StringIO
+    stream = StringIO(newline="")
+    writer = csv.DictWriter(stream, fieldnames=fieldnames, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    return stream.getvalue()
+
+
+def report(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    config = load_config()
+    validation = [row for row in rows if row["split"] == "validation"]
+    threshold, validation_metrics = choose_threshold(validation)
+    splits = {name: [row for row in rows if row["split"] == name] for name in ("train", "validation", "test")}
+    return {
+        "experiment": "LR07-SSIM-01",
+        "dataset_version": json.loads(PREPARED.read_text(encoding="utf-8"))["dataset_version"],
+        "method": "1 - SSIM на серых выровненных фрагментах упаковки размером 128x128",
+        "score_direction": "большее значение означает большее отличие",
+        "selection_split": "validation",
+        "threshold_selection": "Максимальный F1, затем Recall, Specificity и меньший порог при равенстве.",
+        "threshold": threshold,
+        "metrics": {name: metrics(split_rows, threshold) for name, split_rows in splits.items()},
+        "validation_selection": validation_metrics,
+        "input_sha256": {"lab06/data/prepared.json": sha256(PREPARED)},
+        "config_sha256": sha256(CONFIG),
+        "environment": {
+            "python": sys.version.split()[0],
+            "platform": platform.platform(),
+            "numpy": np.__version__,
+        },
+    }
+
+
+def selected_examples(rows: list[dict[str, Any]], threshold: float) -> list[dict[str, Any]]:
+    validation = [row for row in rows if row["split"] == "validation"]
+    correct = {0: [], 1: []}
+    failures = []
+    for row in validation:
+        prediction = int(row["score"] >= threshold)
+        example = {**row, "prediction": prediction}
+        if prediction == row["label"]:
+            correct[prediction].append(example)
+        else:
+            failures.append(example)
+    return correct[0][:5] + correct[1][:5] + failures
+
+
+def write_examples(rows: list[dict[str, Any]], threshold: float) -> str:
+    from io import StringIO
+    stream = StringIO(newline="")
+    fields = ["pair_id", "product_id", "family_id", "split", "label",
+              "defect_type", "variation", "score", "prediction"]
+    writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(selected_examples(rows, threshold))
+    return stream.getvalue()
+
+
+def run(write: bool) -> dict[str, Any]:
+    rows = score_rows(load_pairs())
+    content = report(rows)
+    if write:
+        RESULTS.mkdir(parents=True, exist_ok=True)
+        (RESULTS / "scores.csv").write_text(csv_text(rows), encoding="utf-8", newline="")
+        (RESULTS / "examples.csv").write_text(
+            write_examples(rows, content["threshold"]), encoding="utf-8", newline="")
+        (RESULTS / "summary.json").write_text(stable_json(content), encoding="utf-8")
+    return content
+
+
+def check() -> None:
+    rows = score_rows(load_pairs())
+    actual = report(rows)
+    expected = json.loads((RESULTS / "summary.json").read_text(encoding="utf-8"))
+    # The published environment records provenance, while checking the results
+    # on a different Python patch release or OS remains possible.
+    actual.pop("environment")
+    expected.pop("environment")
+    if actual != expected:
+        raise ValueError("Baseline расходится с зафиксированным summary.json")
+    expected_scores = (RESULTS / "scores.csv").read_text(encoding="utf-8")
+    if csv_text(rows) != expected_scores:
+        raise ValueError("Baseline расходится с зафиксированным scores.csv")
+    if write_examples(rows, actual["threshold"]) != (RESULTS / "examples.csv").read_text(encoding="utf-8"):
+        raise ValueError("Baseline расходится с зафиксированным examples.csv")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    commands = parser.add_subparsers(dest="command", required=True)
-    run = commands.add_parser("run", help="Calculate validation reports")
-    run.add_argument("--out", type=Path, default=RESULTS)
-    commands.add_parser("check", help="Compare recalculated validation reports with the saved files")
-    search = commands.add_parser("search", help="Rank validation posters for a supplied text")
-    search.add_argument("--query", required=True)
+    parser.add_argument("command", choices=("run", "check"))
     args = parser.parse_args()
-
-    raw_settings = SETTINGS.read_bytes()
-    settings = json.loads(raw_settings)
-    try:
-        benchmark = load_validation(settings)
-    except (OSError, ValueError, KeyError) as exc:
-        parser.exit(1, f"{exc}\n")
-    k = settings["k"]
-    index = {
-        poster_id: vectorize(tokens(description), benchmark.weights)
-        for poster_id, description in benchmark.descriptions.items()
-    }
-    if args.command == "search":
-        query = vectorize(tokens(args.query), benchmark.weights)
-        print(json_text(rank(query, index, k)), end="")
-        return
-
-    output = reports(evaluate(benchmark, index, k), settings, sha256(raw_settings))
-    if args.command == "check":
-        for name, content in output.items():
-            path = RESULTS / name
-            if not path.is_file() or path.read_bytes() != content.encode("utf-8"):
-                parser.exit(1, f"Результат отличается от сохранённого: {name}\n")
-        print("Все три отчёта validation совпадают побайтно.")
-        return
-
-    environment = {
-        "implementation": platform.python_implementation(),
-        "python": platform.python_version(),
-        "system": platform.system(),
-        "architecture": platform.machine(),
-        "unicode_version": unicodedata.unidata_version,
-        "dependencies": "Python standard library",
-    }
-    args.out.mkdir(parents=True, exist_ok=True)
-    for name, content in {**output, "environment.json": json_text(environment)}.items():
-        (args.out / name).write_bytes(content.encode("utf-8"))
-    print(output["validation_baseline_summary.csv"], end="")
+    if args.command == "run":
+        print(stable_json(run(write=True)), end="")
+    else:
+        check()
+        print("ЛР 7: SSIM baseline воспроизведён")
 
 
 if __name__ == "__main__":
