@@ -1,0 +1,4 @@
+split_a,split_b,shared_id,shared_author,shared_series,shared_sha256,shared_description,shared_svg_templates,shared_query_texts
+train,validation,0,0,0,0,12,12,12
+train,test,0,0,0,0,12,12,12
+validation,test,0,0,0,0,12,12,12
