@@ -1,0 +1,117 @@
+{
+  "baseline": {
+    "queries": 12,
+    "candidates": 12,
+    "k": 3,
+    "returned_cards": 16,
+    "unauthorized_returns": 0,
+    "returns_missing_source": 0
+  },
+  "manual_checks": [
+    {
+      "case": "V14_actual",
+      "query_id": "V14",
+      "grades": [
+        0,
+        0,
+        2
+      ],
+      "expected": {
+        "ndcg": 0.41311732856427996,
+        "recall": 0.5
+      },
+      "computed": {
+        "ndcg": 0.41311732856427996,
+        "recall": 0.5
+      },
+      "passed": true
+    },
+    {
+      "case": "V14_ideal",
+      "query_id": "V14",
+      "grades": [
+        2,
+        1,
+        0
+      ],
+      "expected": {
+        "ndcg": 1.0,
+        "recall": 1.0
+      },
+      "computed": {
+        "ndcg": 1.0,
+        "recall": 1.0
+      },
+      "passed": true
+    },
+    {
+      "case": "V14_reversed",
+      "query_id": "V14",
+      "grades": [
+        1,
+        2,
+        0
+      ],
+      "expected": {
+        "ndcg": 0.7967075809905066,
+        "recall": 1.0
+      },
+      "computed": {
+        "ndcg": 0.7967075809905066,
+        "recall": 1.0
+      },
+      "passed": true
+    },
+    {
+      "case": "V13_empty",
+      "query_id": "V13",
+      "grades": [],
+      "expected": {
+        "ndcg": 0.0,
+        "recall": 0.0
+      },
+      "computed": {
+        "ndcg": 0.0,
+        "recall": 0.0
+      },
+      "passed": true
+    }
+  ],
+  "qrels_check": {
+    "pairs": 144,
+    "rule_mismatches": 0
+  },
+  "rights_probe": {
+    "probe_id": "CONTROL_UNKNOWN",
+    "query_id": "V19",
+    "status": "unknown",
+    "unfiltered": [
+      "CONTROL_UNKNOWN",
+      "P022",
+      "P033"
+    ],
+    "filtered": [
+      "P022",
+      "P033"
+    ],
+    "passed": true
+  },
+  "special_queries_outside_validation": [
+    {
+      "case": "english",
+      "query": "jazz minimalist",
+      "known_terms": [],
+      "returned": []
+    },
+    {
+      "case": "out_of_catalog",
+      "query": "балет витраж",
+      "known_terms": [],
+      "returned": []
+    }
+  ],
+  "no_relevant_qrels_engine_convention": {
+    "ndcg": 0.0,
+    "recall": 0.0
+  }
+}
