@@ -1,0 +1,13 @@
+{
+  "dataset_version": "2.0",
+  "fit_split": "train",
+  "evaluation_split": "validation",
+  "k": 3,
+  "input_sha256": {
+    "clean.json": "9e1b0564334e433e7b8c0b97035e19e881b1f7f7f920fb32586d0f0add61ea1e",
+    "split.json": "a38170429b89bb587a6456b223c4731f875217635b772f4d230b98bfa67dac48",
+    "queries.json": "7c48162294998b4d937d9e7850b5d73612150f92721f3e0e2d2b67059e025287",
+    "qrels.csv": "063706ce4caaa5bcd604f6f107c978e6bc8094fb31b834f0378705898ab40935",
+    "idf.json": "e8b846746c618ab93b6f65edf2c42568f42030888bab39d18865e87243607260"
+  }
+}
