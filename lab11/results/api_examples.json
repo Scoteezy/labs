@@ -1,0 +1,680 @@
+[
+  {
+    "case": "normal",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 54,
+      "json": {
+        "query": "афиша крупным акцентом"
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "ok",
+      "error": null,
+      "ids": [
+        "P001",
+        "P011",
+        "P027"
+      ],
+      "fallback_reason": null
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": null,
+      "human_decision_required": true,
+      "lexicon_version": null,
+      "mode": "baseline",
+      "model": "tfidf",
+      "model_version": "1.0",
+      "results": [
+        {
+          "genre": "джаз",
+          "id": "P001",
+          "image": "/posters/P001",
+          "matched_terms": [
+            "акцентом",
+            "афиша",
+            "крупным"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.552676375374,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "минимализм"
+        },
+        {
+          "genre": "театр",
+          "id": "P011",
+          "image": "/posters/P011",
+          "matched_terms": [
+            "афиша"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.223460769318,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "детализация"
+        },
+        {
+          "genre": "электроника",
+          "id": "P027",
+          "image": "/posters/P027",
+          "matched_terms": [
+            "афиша"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.223460769318,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "минимализм"
+        }
+      ],
+      "status": "ok"
+    }
+  },
+  {
+    "case": "trimmed",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 58,
+      "json": {
+        "query": "  афиша крупным акцентом  "
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "ok",
+      "error": null,
+      "ids": [
+        "P001",
+        "P011",
+        "P027"
+      ],
+      "fallback_reason": null
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": null,
+      "human_decision_required": true,
+      "lexicon_version": null,
+      "mode": "baseline",
+      "model": "tfidf",
+      "model_version": "1.0",
+      "results": [
+        {
+          "genre": "джаз",
+          "id": "P001",
+          "image": "/posters/P001",
+          "matched_terms": [
+            "акцентом",
+            "афиша",
+            "крупным"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.552676375374,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "минимализм"
+        },
+        {
+          "genre": "театр",
+          "id": "P011",
+          "image": "/posters/P011",
+          "matched_terms": [
+            "афиша"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.223460769318,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "детализация"
+        },
+        {
+          "genre": "электроника",
+          "id": "P027",
+          "image": "/posters/P027",
+          "matched_terms": [
+            "афиша"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.223460769318,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "минимализм"
+        }
+      ],
+      "status": "ok"
+    }
+  },
+  {
+    "case": "synonym_baseline",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 28,
+      "json": {
+        "query": "саксофон"
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "no_matches",
+      "error": null,
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": null,
+      "human_decision_required": false,
+      "lexicon_version": null,
+      "mode": "baseline",
+      "model": "tfidf",
+      "model_version": "1.0",
+      "results": [],
+      "status": "no_matches"
+    }
+  },
+  {
+    "case": "synonym_candidate",
+    "profile": "candidate",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 28,
+      "json": {
+        "query": "саксофон"
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "ok",
+      "error": null,
+      "ids": [
+        "P006",
+        "P005",
+        "P004"
+      ],
+      "fallback_reason": null
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": null,
+      "human_decision_required": true,
+      "lexicon_version": "1.0",
+      "mode": "candidate",
+      "model": "tfidf_genre_normalization",
+      "model_version": "1.0",
+      "results": [
+        {
+          "genre": "джаз",
+          "id": "P006",
+          "image": "/posters/P006",
+          "matched_terms": [
+            "джаз"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.545883839947,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "детализация"
+        },
+        {
+          "genre": "джаз",
+          "id": "P005",
+          "image": "/posters/P005",
+          "matched_terms": [
+            "джаз"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.508149655672,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "минимализм"
+        },
+        {
+          "genre": "джаз",
+          "id": "P004",
+          "image": "/posters/P004",
+          "matched_terms": [
+            "джаз"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.471825567863,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "детализация"
+        }
+      ],
+      "status": "ok"
+    }
+  },
+  {
+    "case": "unknown_language",
+    "profile": "candidate",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 27,
+      "json": {
+        "query": "jazz minimalist"
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "no_matches",
+      "error": null,
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": null,
+      "human_decision_required": false,
+      "lexicon_version": "1.0",
+      "mode": "candidate",
+      "model": "tfidf_genre_normalization",
+      "model_version": "1.0",
+      "results": [],
+      "status": "no_matches"
+    }
+  },
+  {
+    "case": "empty",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 14,
+      "json": {
+        "query": "  "
+      }
+    },
+    "expected": {
+      "http_status": 400,
+      "status": "error",
+      "error": "empty_query",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 400,
+    "output": {
+      "error": "empty_query",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "max_length",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 612,
+      "json": {
+        "query": "яяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя"
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "no_matches",
+      "error": null,
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": null,
+      "human_decision_required": false,
+      "lexicon_version": null,
+      "mode": "baseline",
+      "model": "tfidf",
+      "model_version": "1.0",
+      "results": [],
+      "status": "no_matches"
+    }
+  },
+  {
+    "case": "long",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 614,
+      "json": {
+        "query": "яяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя"
+      }
+    },
+    "expected": {
+      "http_status": 400,
+      "status": "error",
+      "error": "query_too_long",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 400,
+    "output": {
+      "error": "query_too_long",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "bad_type",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 12,
+      "json": {
+        "query": 42
+      }
+    },
+    "expected": {
+      "http_status": 400,
+      "status": "error",
+      "error": "query_must_be_string",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 400,
+    "output": {
+      "error": "query_must_be_string",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "missing_query",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 2,
+      "json": {}
+    },
+    "expected": {
+      "http_status": 400,
+      "status": "error",
+      "error": "query_must_be_string",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 400,
+    "output": {
+      "error": "query_must_be_string",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "not_object",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 2,
+      "json": []
+    },
+    "expected": {
+      "http_status": 400,
+      "status": "error",
+      "error": "object_required",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 400,
+    "output": {
+      "error": "object_required",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "bad_json",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 9,
+      "raw_utf8": "{\"query\":"
+    },
+    "expected": {
+      "http_status": 400,
+      "status": "error",
+      "error": "invalid_json",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 400,
+    "output": {
+      "error": "invalid_json",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "oversize_body",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 4097,
+      "raw_utf8": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "
+    },
+    "expected": {
+      "http_status": 413,
+      "status": "error",
+      "error": "body_too_large",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 413,
+    "output": {
+      "error": "body_too_large",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "wrong_media_type",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "text/plain",
+      "body_bytes": 54,
+      "json": {
+        "query": "афиша крупным акцентом"
+      }
+    },
+    "expected": {
+      "http_status": 415,
+      "status": "error",
+      "error": "unsupported_media_type",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 415,
+    "output": {
+      "error": "unsupported_media_type",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "unknown_route",
+    "profile": "baseline",
+    "request": {
+      "method": "POST",
+      "path": "/unknown",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 54,
+      "json": {
+        "query": "афиша крупным акцентом"
+      }
+    },
+    "expected": {
+      "http_status": 404,
+      "status": "error",
+      "error": "not_found",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 404,
+    "output": {
+      "error": "not_found",
+      "results": [],
+      "status": "error"
+    }
+  },
+  {
+    "case": "fallback",
+    "profile": "candidate_missing_lexicon",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 54,
+      "json": {
+        "query": "афиша крупным акцентом"
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "fallback",
+      "error": null,
+      "ids": [
+        "P001",
+        "P011",
+        "P027"
+      ],
+      "fallback_reason": "candidate_unavailable"
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": "candidate_unavailable",
+      "human_decision_required": true,
+      "lexicon_version": null,
+      "mode": "baseline",
+      "model": "tfidf",
+      "model_version": "1.0",
+      "results": [
+        {
+          "genre": "джаз",
+          "id": "P001",
+          "image": "/posters/P001",
+          "matched_terms": [
+            "акцентом",
+            "афиша",
+            "крупным"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.552676375374,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "минимализм"
+        },
+        {
+          "genre": "театр",
+          "id": "P011",
+          "image": "/posters/P011",
+          "matched_terms": [
+            "афиша"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.223460769318,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "детализация"
+        },
+        {
+          "genre": "электроника",
+          "id": "P027",
+          "image": "/posters/P027",
+          "matched_terms": [
+            "афиша"
+          ],
+          "rights_status": "demo_allowed",
+          "score": 0.223460769318,
+          "source": "ЛР 5 v1.0 → ЛР 6 v2.0",
+          "style": "минимализм"
+        }
+      ],
+      "status": "fallback"
+    }
+  },
+  {
+    "case": "fallback_no_matches",
+    "profile": "candidate_missing_lexicon",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 27,
+      "json": {
+        "query": "jazz minimalist"
+      }
+    },
+    "expected": {
+      "http_status": 200,
+      "status": "no_matches",
+      "error": null,
+      "ids": [],
+      "fallback_reason": "candidate_unavailable"
+    },
+    "http_status": 200,
+    "output": {
+      "dataset_version": "2.0",
+      "fallback_reason": "candidate_unavailable",
+      "human_decision_required": false,
+      "lexicon_version": null,
+      "mode": "baseline",
+      "model": "tfidf",
+      "model_version": "1.0",
+      "results": [],
+      "status": "no_matches"
+    }
+  },
+  {
+    "case": "unavailable",
+    "profile": "baseline_missing_idf",
+    "request": {
+      "method": "POST",
+      "path": "/search",
+      "content_type": "application/json; charset=utf-8",
+      "body_bytes": 54,
+      "json": {
+        "query": "афиша крупным акцентом"
+      }
+    },
+    "expected": {
+      "http_status": 503,
+      "status": "unavailable",
+      "error": "catalog_unavailable",
+      "ids": [],
+      "fallback_reason": null
+    },
+    "http_status": 503,
+    "output": {
+      "error": "catalog_unavailable",
+      "results": [],
+      "status": "unavailable"
+    }
+  }
+]
