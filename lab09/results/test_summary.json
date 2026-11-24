@@ -1,0 +1,12 @@
+{
+  "split": "test",
+  "mode": "tfidf_genre_normalization",
+  "validation_decision_sha256": "1b9480d3fdad61e773d5ad2f00b1167f9e2becf89f9a7e2f6d6647af63397d2c",
+  "queries": 12,
+  "candidates": 12,
+  "ndcg": 0.3557399218192411,
+  "recall": 0.3333333333333333,
+  "returned_cards": 27,
+  "unauthorized_returns": 0,
+  "returns_missing_source": 0
+}
