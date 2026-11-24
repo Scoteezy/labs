@@ -1,0 +1,27 @@
+{
+  "config_sha256": "8ab0756b73ace637e6bc289ba198e985f8ef87bc60e9087d8ae690fde9de686f",
+  "lexicon_sha256": "d3e9d4d8466ececd9f31f0efe8ff853814881f7c0a37bcd67ec49e645fd1c0f5",
+  "baseline_settings_sha256": "c1f2d33b485b347cc70ca9ebdc4a426c9e03ea35e8d6a4247884c605b5a4ee75",
+  "baseline_idf_sha256": "e8b846746c618ab93b6f65edf2c42568f42030888bab39d18865e87243607260",
+  "candidate_idf_sha256": "e3503434a993dbe1b1e09c48fd1d3550f75df437b657689d7720eb6c3e6cd697",
+  "experiment": "LR09-E01",
+  "split": "validation",
+  "baseline": {
+    "ndcg": 0.2385245186509922,
+    "recall": 0.20833333333333334
+  },
+  "candidate": {
+    "ndcg": 0.8573730444555644,
+    "recall": 0.875
+  },
+  "absolute_ndcg_gain": 0.6188485258045722,
+  "criteria_met": {
+    "ndcg_gain": true,
+    "recall": true,
+    "rights": true,
+    "alpha_ndcg": true
+  },
+  "h1_supported": true,
+  "alpha_decision": "include",
+  "selected_for_test": "tfidf_genre_normalization"
+}
