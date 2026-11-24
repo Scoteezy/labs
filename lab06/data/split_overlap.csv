@@ -1,0 +1,4 @@
+split_a,split_b,card_id,card_author,card_series,card_family,card_source_sha256,card_sha256,card_geometry_sha256,description,query_id,query_text
+train,validation,0,0,0,0,0,0,0,0,0,0
+train,test,0,0,0,0,0,0,0,0,0,0
+validation,test,0,0,0,0,0,0,0,0,0,0
