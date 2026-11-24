@@ -1,0 +1,46 @@
+{
+  "experiment": "LR10-LATENCY-01",
+  "purpose": "Задержка обработки запроса и top-3 ранжирования после загрузки индекса на validation ЛР 9.",
+  "dataset_version": "2.0",
+  "split": "validation",
+  "queries": 12,
+  "permitted_candidates": 12,
+  "k": 3,
+  "measurement": {
+    "unit": "milliseconds",
+    "timer": "time.perf_counter_ns",
+    "timer_resolution_seconds": 4.166666666666667e-08,
+    "warmup_cycles_per_mode": 20,
+    "measurement_cycles_per_mode": 100,
+    "samples_per_mode": 1200,
+    "interleaving": "Порядок режимов меняется на каждом цикле. Запросы идут в фиксированном порядке validation.",
+    "included": "Нормализация текста, векторизация запроса и косинусное top-3 ранжирование.",
+    "excluded": "Проверка допуска при построении индекса, чтение файлов, запуск процесса, HTTP и сериализация.",
+    "ranking_check": "До замера выдачи сверяются с повторно рассчитанными выдачами ЛР 9."
+  },
+  "modes": {
+    "baseline": {
+      "implementation": "tfidf",
+      "p50_ms": 0.00725,
+      "p95_ms": 0.011333,
+      "minimum_ms": 0.0025,
+      "maximum_ms": 0.014084
+    },
+    "candidate": {
+      "implementation": "tfidf_genre_normalization",
+      "p50_ms": 0.008292,
+      "p95_ms": 0.012459,
+      "minimum_ms": 0.006625,
+      "maximum_ms": 0.027084
+    }
+  },
+  "environment": {
+    "implementation": "CPython",
+    "python": "3.9.6",
+    "system": "Darwin",
+    "architecture": "arm64",
+    "unicode_version": "13.0.0",
+    "dependencies": "Python standard library"
+  },
+  "note": "Временные значения зависят от машины и фоновой нагрузки."
+}
