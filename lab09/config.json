@@ -1,0 +1,16 @@
+{
+  "experiment": "LR09-E01",
+  "baseline": "tfidf",
+  "candidate": "tfidf_genre_normalization",
+  "dataset_version": "2.0",
+  "fit_split": "train",
+  "selection_split": "validation",
+  "test_split": "test",
+  "k": 3,
+  "seed": null,
+  "lexicon_version": "1.0",
+  "minimum_ndcg_gain": 0.10,
+  "minimum_recall": "5/24",
+  "maximum_unauthorized_returns": 0,
+  "alpha_minimum_ndcg": 0.70
+}
