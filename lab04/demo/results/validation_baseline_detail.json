@@ -1,0 +1,386 @@
+[
+  {
+    "query": {
+      "id": "V13",
+      "split": "validation",
+      "text": "джаз минимализм",
+      "genre": "джаз",
+      "kind": "literal",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [
+      {
+        "id": "P003",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P003.svg"
+      },
+      {
+        "id": "P004",
+        "genre": "джаз",
+        "style": "детализация",
+        "score": 0.630184,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P004.svg"
+      },
+      {
+        "id": "P009",
+        "genre": "театр",
+        "style": "минимализм",
+        "score": 0.271567,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P009.svg"
+      }
+    ],
+    "grades": [
+      2,
+      1,
+      0
+    ],
+    "metrics": {
+      "ndcg": 1.0,
+      "recall": 1.0
+    }
+  },
+  {
+    "query": {
+      "id": "V14",
+      "split": "validation",
+      "text": "саксофон лаконичный",
+      "genre": "джаз",
+      "kind": "synonym",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [],
+    "grades": [],
+    "metrics": {
+      "ndcg": 0.0,
+      "recall": 0.0
+    }
+  },
+  {
+    "query": {
+      "id": "V15",
+      "split": "validation",
+      "text": "театр минимализм",
+      "genre": "театр",
+      "kind": "literal",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [
+      {
+        "id": "P009",
+        "genre": "театр",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P009.svg"
+      },
+      {
+        "id": "P010",
+        "genre": "театр",
+        "style": "детализация",
+        "score": 0.630184,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P010.svg"
+      },
+      {
+        "id": "P003",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.271567,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P003.svg"
+      }
+    ],
+    "grades": [
+      2,
+      1,
+      0
+    ],
+    "metrics": {
+      "ndcg": 1.0,
+      "recall": 1.0
+    }
+  },
+  {
+    "query": {
+      "id": "V16",
+      "split": "validation",
+      "text": "спектакль лаконичный",
+      "genre": "театр",
+      "kind": "synonym",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [],
+    "grades": [],
+    "metrics": {
+      "ndcg": 0.0,
+      "recall": 0.0
+    }
+  },
+  {
+    "query": {
+      "id": "V17",
+      "split": "validation",
+      "text": "кино минимализм",
+      "genre": "кино",
+      "kind": "literal",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [
+      {
+        "id": "P015",
+        "genre": "кино",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P015.svg"
+      },
+      {
+        "id": "P016",
+        "genre": "кино",
+        "style": "детализация",
+        "score": 0.630184,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P016.svg"
+      },
+      {
+        "id": "P003",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.271567,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P003.svg"
+      }
+    ],
+    "grades": [
+      2,
+      1,
+      0
+    ],
+    "metrics": {
+      "ndcg": 1.0,
+      "recall": 1.0
+    }
+  },
+  {
+    "query": {
+      "id": "V18",
+      "split": "validation",
+      "text": "кинопоказ лаконичный",
+      "genre": "кино",
+      "kind": "synonym",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [],
+    "grades": [],
+    "metrics": {
+      "ndcg": 0.0,
+      "recall": 0.0
+    }
+  },
+  {
+    "query": {
+      "id": "V19",
+      "split": "validation",
+      "text": "выставка минимализм",
+      "genre": "выставка",
+      "kind": "literal",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [
+      {
+        "id": "P021",
+        "genre": "выставка",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P021.svg"
+      },
+      {
+        "id": "P022",
+        "genre": "выставка",
+        "style": "детализация",
+        "score": 0.630184,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P022.svg"
+      },
+      {
+        "id": "P003",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.271567,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P003.svg"
+      }
+    ],
+    "grades": [
+      2,
+      1,
+      0
+    ],
+    "metrics": {
+      "ndcg": 1.0,
+      "recall": 1.0
+    }
+  },
+  {
+    "query": {
+      "id": "V20",
+      "split": "validation",
+      "text": "галерея лаконичный",
+      "genre": "выставка",
+      "kind": "synonym",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [],
+    "grades": [],
+    "metrics": {
+      "ndcg": 0.0,
+      "recall": 0.0
+    }
+  },
+  {
+    "query": {
+      "id": "V21",
+      "split": "validation",
+      "text": "электроника минимализм",
+      "genre": "электроника",
+      "kind": "literal",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [
+      {
+        "id": "P027",
+        "genre": "электроника",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P027.svg"
+      },
+      {
+        "id": "P028",
+        "genre": "электроника",
+        "style": "детализация",
+        "score": 0.630184,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P028.svg"
+      },
+      {
+        "id": "P003",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.271567,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P003.svg"
+      }
+    ],
+    "grades": [
+      2,
+      1,
+      0
+    ],
+    "metrics": {
+      "ndcg": 1.0,
+      "recall": 1.0
+    }
+  },
+  {
+    "query": {
+      "id": "V22",
+      "split": "validation",
+      "text": "рейв лаконичный",
+      "genre": "электроника",
+      "kind": "synonym",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [],
+    "grades": [],
+    "metrics": {
+      "ndcg": 0.0,
+      "recall": 0.0
+    }
+  },
+  {
+    "query": {
+      "id": "V23",
+      "split": "validation",
+      "text": "фестиваль минимализм",
+      "genre": "фестиваль",
+      "kind": "literal",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [
+      {
+        "id": "P033",
+        "genre": "фестиваль",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P033.svg"
+      },
+      {
+        "id": "P034",
+        "genre": "фестиваль",
+        "style": "детализация",
+        "score": 0.630184,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P034.svg"
+      },
+      {
+        "id": "P003",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.271567,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P003.svg"
+      }
+    ],
+    "grades": [
+      2,
+      1,
+      0
+    ],
+    "metrics": {
+      "ndcg": 1.0,
+      "recall": 1.0
+    }
+  },
+  {
+    "query": {
+      "id": "V24",
+      "split": "validation",
+      "text": "опенэйр лаконичный",
+      "genre": "фестиваль",
+      "kind": "synonym",
+      "source": "synthetic fixture; no human assessment"
+    },
+    "results": [],
+    "grades": [],
+    "metrics": {
+      "ndcg": 0.0,
+      "recall": 0.0
+    }
+  }
+]

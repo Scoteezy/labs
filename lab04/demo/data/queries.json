@@ -1,0 +1,290 @@
+[
+  {
+    "id": "T01",
+    "split": "train",
+    "text": "джаз минимализм",
+    "genre": "джаз",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T02",
+    "split": "train",
+    "text": "саксофон лаконичный",
+    "genre": "джаз",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T03",
+    "split": "train",
+    "text": "театр минимализм",
+    "genre": "театр",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T04",
+    "split": "train",
+    "text": "спектакль лаконичный",
+    "genre": "театр",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T05",
+    "split": "train",
+    "text": "кино минимализм",
+    "genre": "кино",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T06",
+    "split": "train",
+    "text": "кинопоказ лаконичный",
+    "genre": "кино",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T07",
+    "split": "train",
+    "text": "выставка минимализм",
+    "genre": "выставка",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T08",
+    "split": "train",
+    "text": "галерея лаконичный",
+    "genre": "выставка",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T09",
+    "split": "train",
+    "text": "электроника минимализм",
+    "genre": "электроника",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T10",
+    "split": "train",
+    "text": "рейв лаконичный",
+    "genre": "электроника",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T11",
+    "split": "train",
+    "text": "фестиваль минимализм",
+    "genre": "фестиваль",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T12",
+    "split": "train",
+    "text": "опенэйр лаконичный",
+    "genre": "фестиваль",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V13",
+    "split": "validation",
+    "text": "джаз минимализм",
+    "genre": "джаз",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V14",
+    "split": "validation",
+    "text": "саксофон лаконичный",
+    "genre": "джаз",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V15",
+    "split": "validation",
+    "text": "театр минимализм",
+    "genre": "театр",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V16",
+    "split": "validation",
+    "text": "спектакль лаконичный",
+    "genre": "театр",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V17",
+    "split": "validation",
+    "text": "кино минимализм",
+    "genre": "кино",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V18",
+    "split": "validation",
+    "text": "кинопоказ лаконичный",
+    "genre": "кино",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V19",
+    "split": "validation",
+    "text": "выставка минимализм",
+    "genre": "выставка",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V20",
+    "split": "validation",
+    "text": "галерея лаконичный",
+    "genre": "выставка",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V21",
+    "split": "validation",
+    "text": "электроника минимализм",
+    "genre": "электроника",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V22",
+    "split": "validation",
+    "text": "рейв лаконичный",
+    "genre": "электроника",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V23",
+    "split": "validation",
+    "text": "фестиваль минимализм",
+    "genre": "фестиваль",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "V24",
+    "split": "validation",
+    "text": "опенэйр лаконичный",
+    "genre": "фестиваль",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T25",
+    "split": "test",
+    "text": "джаз минимализм",
+    "genre": "джаз",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T26",
+    "split": "test",
+    "text": "саксофон лаконичный",
+    "genre": "джаз",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T27",
+    "split": "test",
+    "text": "театр минимализм",
+    "genre": "театр",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T28",
+    "split": "test",
+    "text": "спектакль лаконичный",
+    "genre": "театр",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T29",
+    "split": "test",
+    "text": "кино минимализм",
+    "genre": "кино",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T30",
+    "split": "test",
+    "text": "кинопоказ лаконичный",
+    "genre": "кино",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T31",
+    "split": "test",
+    "text": "выставка минимализм",
+    "genre": "выставка",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T32",
+    "split": "test",
+    "text": "галерея лаконичный",
+    "genre": "выставка",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T33",
+    "split": "test",
+    "text": "электроника минимализм",
+    "genre": "электроника",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T34",
+    "split": "test",
+    "text": "рейв лаконичный",
+    "genre": "электроника",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T35",
+    "split": "test",
+    "text": "фестиваль минимализм",
+    "genre": "фестиваль",
+    "kind": "literal",
+    "source": "synthetic fixture; no human assessment"
+  },
+  {
+    "id": "T36",
+    "split": "test",
+    "text": "опенэйр лаконичный",
+    "genre": "фестиваль",
+    "kind": "synonym",
+    "source": "synthetic fixture; no human assessment"
+  }
+]

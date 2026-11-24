@@ -1,0 +1,7 @@
+{
+  "k": 3,
+  "max_query_chars": 300,
+  "model": "tfidf+lexicon",
+  "model_version": "1.0",
+  "seed": 42
+}

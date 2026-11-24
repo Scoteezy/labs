@@ -1,0 +1,13 @@
+id,annotator_A,annotator_B,final,decision,evidence
+P001,минимализм,минимализм,минимализм,unchanged,synthetic independent-label simulation
+P002,детализация,детализация,детализация,unchanged,synthetic independent-label simulation
+P003,минимализм,минимализм,минимализм,unchanged,synthetic independent-label simulation
+P004,детализация,минимализм,детализация,reviewed by fixture rule objects<=3,synthetic independent-label simulation
+P005,минимализм,минимализм,минимализм,unchanged,synthetic independent-label simulation
+P006,детализация,детализация,детализация,unchanged,synthetic independent-label simulation
+P007,минимализм,минимализм,минимализм,unchanged,synthetic independent-label simulation
+P008,детализация,детализация,детализация,unchanged,synthetic independent-label simulation
+P009,минимализм,детализация,минимализм,reviewed by fixture rule objects<=3,synthetic independent-label simulation
+P010,детализация,детализация,детализация,unchanged,synthetic independent-label simulation
+P011,минимализм,минимализм,минимализм,unchanged,synthetic independent-label simulation
+P012,детализация,детализация,детализация,unchanged,synthetic independent-label simulation

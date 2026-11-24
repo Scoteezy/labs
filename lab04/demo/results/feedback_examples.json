@@ -1,0 +1,18 @@
+[
+  {
+    "record_id": "P003",
+    "action": "correct",
+    "actor": "designer_demo",
+    "proposed_style": "детализация",
+    "status": "pending_review",
+    "model_updated": false
+  },
+  {
+    "record_id": "P004",
+    "action": "escalate",
+    "actor": "designer_demo",
+    "proposed_style": null,
+    "status": "pending_review",
+    "model_updated": false
+  }
+]

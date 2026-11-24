@@ -1,0 +1,171 @@
+[
+  {
+    "case": "normal",
+    "input": {
+      "query": "джаз минимализм"
+    },
+    "http_status": 200,
+    "output": {
+      "status": "ok",
+      "model": "improved",
+      "results": [
+        {
+          "id": "P001",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P001.svg"
+        },
+        {
+          "id": "P003",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P003.svg"
+        },
+        {
+          "id": "P005",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P005.svg"
+        }
+      ],
+      "human_decision_required": true
+    }
+  },
+  {
+    "case": "synonym",
+    "input": {
+      "query": "саксофон лаконичный"
+    },
+    "http_status": 200,
+    "output": {
+      "status": "ok",
+      "model": "improved",
+      "results": [
+        {
+          "id": "P001",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P001.svg"
+        },
+        {
+          "id": "P003",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P003.svg"
+        },
+        {
+          "id": "P005",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P005.svg"
+        }
+      ],
+      "human_decision_required": true
+    }
+  },
+  {
+    "case": "empty",
+    "input": {
+      "query": ""
+    },
+    "http_status": 400,
+    "output": {
+      "status": "error",
+      "error": "empty_query"
+    }
+  },
+  {
+    "case": "long",
+    "input": {
+      "query": "ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа"
+    },
+    "http_status": 400,
+    "output": {
+      "status": "error",
+      "error": "query_too_long"
+    }
+  },
+  {
+    "case": "english",
+    "input": {
+      "query": "jazz minimalist"
+    },
+    "http_status": 200,
+    "output": {
+      "status": "no_matches",
+      "model": "improved",
+      "results": [],
+      "human_decision_required": true
+    }
+  },
+  {
+    "case": "fallback",
+    "input": {
+      "query": "джаз минимализм"
+    },
+    "http_status": 200,
+    "output": {
+      "status": "fallback",
+      "model": "baseline",
+      "results": [
+        {
+          "id": "P001",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P001.svg"
+        },
+        {
+          "id": "P003",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P003.svg"
+        },
+        {
+          "id": "P005",
+          "genre": "джаз",
+          "style": "минимализм",
+          "score": 0.901752,
+          "source": "generated:demo/project.py",
+          "rights_status": "demo_allowed",
+          "image": "demo/data/posters/P005.svg"
+        }
+      ],
+      "human_decision_required": true
+    }
+  },
+  {
+    "case": "bad_type",
+    "input": {
+      "query": 42
+    },
+    "http_status": 400,
+    "output": {
+      "status": "error",
+      "error": "query_must_be_string"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "jazz minimalist": {
+    "status": "no_matches",
+    "model": "improved",
+    "results": [],
+    "human_decision_required": true
+  },
+  "не джаз минимализм": {
+    "status": "ok",
+    "model": "improved",
+    "results": [
+      {
+        "id": "P001",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P001.svg"
+      },
+      {
+        "id": "P003",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P003.svg"
+      },
+      {
+        "id": "P005",
+        "genre": "джаз",
+        "style": "минимализм",
+        "score": 0.901752,
+        "source": "generated:demo/project.py",
+        "rights_status": "demo_allowed",
+        "image": "demo/data/posters/P005.svg"
+      }
+    ],
+    "human_decision_required": true
+  }
+}

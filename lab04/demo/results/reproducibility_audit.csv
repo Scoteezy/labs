@@ -1,0 +1,11 @@
+check,actual,expected,passed
+raw_records,42,42,True
+clean_records,36,36,True
+svg_files,36,36,True
+unknown_rights_in_clean,0,0,True
+empty_descriptions_in_clean,0,0,True
+duplicate_hashes_in_clean,0,0,True
+author_overlap_between_splits,0,0,True
+series_overlap_between_splits,0,0,True
+image_path_hash_mismatches,0,0,True
+svg_dimension_or_parse_errors,0,0,True
