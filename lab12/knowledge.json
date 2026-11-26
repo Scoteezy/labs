@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "scope": "Контролируемый синтетический пилот упаковки, один почти фронтальный товар",
+  "source": "lab06/annotation_guideline.md",
+  "required_context": [
+    {"field": "same_product", "rule_id": "K1", "reason": "same_product_not_confirmed", "description": "В обеих областях показан один товар"},
+    {"field": "frontal_view", "rule_id": "K2", "reason": "frontal_view_not_confirmed", "description": "Ракурсы приблизительно фронтальные и сопоставимы"},
+    {"field": "label_visible", "rule_id": "K3", "reason": "label_visibility_not_confirmed", "description": "Надпись, логотип и контур видимы для сравнения"},
+    {"field": "regions_aligned", "rule_id": "K4", "reason": "alignment_not_confirmed", "description": "Области охватывают соответствующие части упаковки"}
+  ],
+  "label_rules": [
+    {"label": 0, "defect_types": ["none"], "meaning": "Текст, логотип и форма сохранены"},
+    {"label": 1, "defect_types": ["text", "logo", "shape"], "meaning": "Изменён текст, логотип или форма"}
+  ],
+  "feedback": {
+    "actor": "designer_demo",
+    "actions": {
+      "accept": {"status": "recorded", "review_status": "designer_accepted"},
+      "reject": {"status": "recorded", "review_status": "designer_rejected"},
+      "correct": {"status": "pending_review", "review_status": "awaiting_expert"},
+      "escalate": {"status": "pending_review", "review_status": "awaiting_expert"}
+    },
+    "note_max_chars": 500
+  }
+}

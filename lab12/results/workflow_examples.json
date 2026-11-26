@@ -1,0 +1,1021 @@
+{
+  "steps": [
+    {
+      "case": "inspect_preserved",
+      "method": "POST",
+      "path": "/inspect",
+      "input": {
+        "record_id": "PAIR001_01",
+        "context": {
+          "same_product": true,
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "assessment": "passed"
+      },
+      "http_status": 200,
+      "output": {
+        "applied_rules": [
+          "K1",
+          "K2",
+          "K3",
+          "K4"
+        ],
+        "assessment": "passed",
+        "context": {
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true,
+          "same_product": true
+        },
+        "dataset_updated": false,
+        "feedback": null,
+        "human_decision_required": true,
+        "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+        "knowledge_version": "1.0",
+        "machine_result": {
+          "assessment": "passed",
+          "dataset_version": "1.0",
+          "fallback_reason": null,
+          "human_decision_required": true,
+          "input": {
+            "candidate_box": [
+              59,
+              53,
+              161,
+              241
+            ],
+            "candidate_size": [
+              224,
+              288
+            ],
+            "original_box": [
+              61,
+              54,
+              163,
+              242
+            ],
+            "original_size": [
+              224,
+              288
+            ]
+          },
+          "message": "Оценка ниже порога. Дизайнер принимает решение о кадре.",
+          "mode": "baseline",
+          "model_version": "ssim_1.0",
+          "score": 0.006003681329,
+          "status": "ok",
+          "threshold": 0.017705861976
+        },
+        "model_updated": false,
+        "provenance": {
+          "candidate": "lab04/data/images/PAIR001_01_candidate.png",
+          "candidate_sha256": "7c09811502c0a44809d728cfbea993a48f418c00cefa636012ab97c1c8ebd83e",
+          "instruction": "lab06/annotation_guideline.md",
+          "original": "lab04/data/images/COSM001_original.png",
+          "original_sha256": "032d5dd6ef88482af848987160361f8b2f165ae81aabc3043ba44a8578297f91",
+          "rights_status": "project_generated",
+          "source": "controlled_synthetic"
+        },
+        "reasons": [],
+        "record_id": "PAIR001_01",
+        "release_allowed": false,
+        "review_status": "awaiting_designer",
+        "status": "ok"
+      }
+    },
+    {
+      "case": "designer_accepts",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_accept_01",
+        "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+        "actor": "designer_demo",
+        "action": "accept",
+        "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена."
+      },
+      "expected": {
+        "http_status": 200,
+        "review_status": "designer_accepted"
+      },
+      "http_status": 200,
+      "output": {
+        "action": "accept",
+        "actor": "designer_demo",
+        "created_at": "2026-11-26T14:21:23.099062+00:00",
+        "dataset_updated": false,
+        "defect_type": null,
+        "event_id": "E_accept_01",
+        "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+        "knowledge_version": "1.0",
+        "model_updated": false,
+        "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена.",
+        "proposed_label": null,
+        "record_id": "PAIR001_01",
+        "review_status": "designer_accepted",
+        "status": "recorded"
+      }
+    },
+    {
+      "case": "retry_same_event",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_accept_01",
+        "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+        "actor": "designer_demo",
+        "action": "accept",
+        "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена."
+      },
+      "expected": {
+        "http_status": 200,
+        "review_status": "designer_accepted"
+      },
+      "http_status": 200,
+      "output": {
+        "action": "accept",
+        "actor": "designer_demo",
+        "created_at": "2026-11-26T14:21:23.099062+00:00",
+        "dataset_updated": false,
+        "defect_type": null,
+        "event_id": "E_accept_01",
+        "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+        "knowledge_version": "1.0",
+        "model_updated": false,
+        "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена.",
+        "proposed_label": null,
+        "record_id": "PAIR001_01",
+        "review_status": "designer_accepted",
+        "status": "recorded"
+      }
+    },
+    {
+      "case": "accepted_state",
+      "method": "GET",
+      "path": "/inspections/I_37a73c2dd3fc80cb34b0ab3f",
+      "input": null,
+      "expected": {
+        "http_status": 200,
+        "release_allowed": true
+      },
+      "http_status": 200,
+      "output": {
+        "applied_rules": [
+          "K1",
+          "K2",
+          "K3",
+          "K4"
+        ],
+        "assessment": "passed",
+        "context": {
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true,
+          "same_product": true
+        },
+        "dataset_updated": false,
+        "feedback": {
+          "action": "accept",
+          "actor": "designer_demo",
+          "created_at": "2026-11-26T14:21:23.099062+00:00",
+          "dataset_updated": false,
+          "defect_type": null,
+          "event_id": "E_accept_01",
+          "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+          "knowledge_version": "1.0",
+          "model_updated": false,
+          "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена.",
+          "proposed_label": null,
+          "record_id": "PAIR001_01",
+          "review_status": "designer_accepted",
+          "status": "recorded"
+        },
+        "human_decision_required": true,
+        "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+        "knowledge_version": "1.0",
+        "machine_result": {
+          "assessment": "passed",
+          "dataset_version": "1.0",
+          "fallback_reason": null,
+          "human_decision_required": true,
+          "input": {
+            "candidate_box": [
+              59,
+              53,
+              161,
+              241
+            ],
+            "candidate_size": [
+              224,
+              288
+            ],
+            "original_box": [
+              61,
+              54,
+              163,
+              242
+            ],
+            "original_size": [
+              224,
+              288
+            ]
+          },
+          "message": "Оценка ниже порога. Дизайнер принимает решение о кадре.",
+          "mode": "baseline",
+          "model_version": "ssim_1.0",
+          "score": 0.006003681329,
+          "status": "ok",
+          "threshold": 0.017705861976
+        },
+        "model_updated": false,
+        "provenance": {
+          "candidate": "lab04/data/images/PAIR001_01_candidate.png",
+          "candidate_sha256": "7c09811502c0a44809d728cfbea993a48f418c00cefa636012ab97c1c8ebd83e",
+          "instruction": "lab06/annotation_guideline.md",
+          "original": "lab04/data/images/COSM001_original.png",
+          "original_sha256": "032d5dd6ef88482af848987160361f8b2f165ae81aabc3043ba44a8578297f91",
+          "rights_status": "project_generated",
+          "source": "controlled_synthetic"
+        },
+        "reasons": [],
+        "record_id": "PAIR001_01",
+        "release_allowed": true,
+        "review_status": "designer_accepted",
+        "status": "ok"
+      }
+    },
+    {
+      "case": "inspect_lighting_false_alarm",
+      "method": "POST",
+      "path": "/inspect",
+      "input": {
+        "record_id": "PAIR019_04",
+        "context": {
+          "same_product": true,
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "assessment": "suspected_distortion"
+      },
+      "http_status": 200,
+      "output": {
+        "applied_rules": [
+          "K1",
+          "K2",
+          "K3",
+          "K4"
+        ],
+        "assessment": "suspected_distortion",
+        "context": {
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true,
+          "same_product": true
+        },
+        "dataset_updated": false,
+        "feedback": null,
+        "human_decision_required": true,
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "knowledge_version": "1.0",
+        "machine_result": {
+          "assessment": "suspected_distortion",
+          "dataset_version": "1.0",
+          "fallback_reason": null,
+          "human_decision_required": true,
+          "input": {
+            "candidate_box": [
+              63,
+              52,
+              165,
+              240
+            ],
+            "candidate_size": [
+              224,
+              288
+            ],
+            "original_box": [
+              61,
+              54,
+              163,
+              242
+            ],
+            "original_size": [
+              224,
+              288
+            ]
+          },
+          "message": "Требуется проверить упаковку, этикетку и форму товара.",
+          "mode": "baseline",
+          "model_version": "ssim_1.0",
+          "score": 0.045095841432,
+          "status": "ok",
+          "threshold": 0.017705861976
+        },
+        "model_updated": false,
+        "provenance": {
+          "candidate": "lab04/data/images/PAIR019_04_candidate.png",
+          "candidate_sha256": "acf3e27ce4067b9724537fcd0ac00875925bf83e2d343569476ca66692c757d3",
+          "instruction": "lab06/annotation_guideline.md",
+          "original": "lab04/data/images/COSM019_original.png",
+          "original_sha256": "23facf9569523f9573611bcddec547ad8b44c29bad0fed2a46a0cae30cfa46fb",
+          "rights_status": "project_generated",
+          "source": "controlled_synthetic"
+        },
+        "reasons": [],
+        "record_id": "PAIR019_04",
+        "release_allowed": false,
+        "review_status": "awaiting_designer",
+        "status": "ok"
+      }
+    },
+    {
+      "case": "correct_false_alarm",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_correct_01",
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "actor": "designer_demo",
+        "action": "correct",
+        "proposed_label": 0,
+        "defect_type": "none",
+        "note": "Затемнение кадра. Текст, логотип и форма сохранены."
+      },
+      "expected": {
+        "http_status": 200,
+        "status": "pending_review"
+      },
+      "http_status": 200,
+      "output": {
+        "action": "correct",
+        "actor": "designer_demo",
+        "created_at": "2026-11-26T14:21:23.103906+00:00",
+        "dataset_updated": false,
+        "defect_type": "none",
+        "event_id": "E_correct_01",
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "knowledge_version": "1.0",
+        "model_updated": false,
+        "note": "Затемнение кадра. Текст, логотип и форма сохранены.",
+        "proposed_label": 0,
+        "record_id": "PAIR019_04",
+        "review_status": "awaiting_expert",
+        "status": "pending_review"
+      }
+    },
+    {
+      "case": "correction_state",
+      "method": "GET",
+      "path": "/inspections/I_418c7bb927053c980bb484ac",
+      "input": null,
+      "expected": {
+        "http_status": 200,
+        "review_status": "awaiting_expert"
+      },
+      "http_status": 200,
+      "output": {
+        "applied_rules": [
+          "K1",
+          "K2",
+          "K3",
+          "K4"
+        ],
+        "assessment": "suspected_distortion",
+        "context": {
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true,
+          "same_product": true
+        },
+        "dataset_updated": false,
+        "feedback": {
+          "action": "correct",
+          "actor": "designer_demo",
+          "created_at": "2026-11-26T14:21:23.103906+00:00",
+          "dataset_updated": false,
+          "defect_type": "none",
+          "event_id": "E_correct_01",
+          "inspection_id": "I_418c7bb927053c980bb484ac",
+          "knowledge_version": "1.0",
+          "model_updated": false,
+          "note": "Затемнение кадра. Текст, логотип и форма сохранены.",
+          "proposed_label": 0,
+          "record_id": "PAIR019_04",
+          "review_status": "awaiting_expert",
+          "status": "pending_review"
+        },
+        "human_decision_required": true,
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "knowledge_version": "1.0",
+        "machine_result": {
+          "assessment": "suspected_distortion",
+          "dataset_version": "1.0",
+          "fallback_reason": null,
+          "human_decision_required": true,
+          "input": {
+            "candidate_box": [
+              63,
+              52,
+              165,
+              240
+            ],
+            "candidate_size": [
+              224,
+              288
+            ],
+            "original_box": [
+              61,
+              54,
+              163,
+              242
+            ],
+            "original_size": [
+              224,
+              288
+            ]
+          },
+          "message": "Требуется проверить упаковку, этикетку и форму товара.",
+          "mode": "baseline",
+          "model_version": "ssim_1.0",
+          "score": 0.045095841432,
+          "status": "ok",
+          "threshold": 0.017705861976
+        },
+        "model_updated": false,
+        "provenance": {
+          "candidate": "lab04/data/images/PAIR019_04_candidate.png",
+          "candidate_sha256": "acf3e27ce4067b9724537fcd0ac00875925bf83e2d343569476ca66692c757d3",
+          "instruction": "lab06/annotation_guideline.md",
+          "original": "lab04/data/images/COSM019_original.png",
+          "original_sha256": "23facf9569523f9573611bcddec547ad8b44c29bad0fed2a46a0cae30cfa46fb",
+          "rights_status": "project_generated",
+          "source": "controlled_synthetic"
+        },
+        "reasons": [],
+        "record_id": "PAIR019_04",
+        "release_allowed": false,
+        "review_status": "awaiting_expert",
+        "status": "ok"
+      }
+    },
+    {
+      "case": "repeat_inspection_keeps_review",
+      "method": "POST",
+      "path": "/inspect",
+      "input": {
+        "record_id": "PAIR019_04",
+        "context": {
+          "same_product": true,
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "review_status": "awaiting_expert"
+      },
+      "http_status": 200,
+      "output": {
+        "applied_rules": [
+          "K1",
+          "K2",
+          "K3",
+          "K4"
+        ],
+        "assessment": "suspected_distortion",
+        "context": {
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true,
+          "same_product": true
+        },
+        "dataset_updated": false,
+        "feedback": {
+          "action": "correct",
+          "actor": "designer_demo",
+          "created_at": "2026-11-26T14:21:23.103906+00:00",
+          "dataset_updated": false,
+          "defect_type": "none",
+          "event_id": "E_correct_01",
+          "inspection_id": "I_418c7bb927053c980bb484ac",
+          "knowledge_version": "1.0",
+          "model_updated": false,
+          "note": "Затемнение кадра. Текст, логотип и форма сохранены.",
+          "proposed_label": 0,
+          "record_id": "PAIR019_04",
+          "review_status": "awaiting_expert",
+          "status": "pending_review"
+        },
+        "human_decision_required": true,
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "knowledge_version": "1.0",
+        "machine_result": {
+          "assessment": "suspected_distortion",
+          "dataset_version": "1.0",
+          "fallback_reason": null,
+          "human_decision_required": true,
+          "input": {
+            "candidate_box": [
+              63,
+              52,
+              165,
+              240
+            ],
+            "candidate_size": [
+              224,
+              288
+            ],
+            "original_box": [
+              61,
+              54,
+              163,
+              242
+            ],
+            "original_size": [
+              224,
+              288
+            ]
+          },
+          "message": "Требуется проверить упаковку, этикетку и форму товара.",
+          "mode": "baseline",
+          "model_version": "ssim_1.0",
+          "score": 0.045095841432,
+          "status": "ok",
+          "threshold": 0.017705861976
+        },
+        "model_updated": false,
+        "provenance": {
+          "candidate": "lab04/data/images/PAIR019_04_candidate.png",
+          "candidate_sha256": "acf3e27ce4067b9724537fcd0ac00875925bf83e2d343569476ca66692c757d3",
+          "instruction": "lab06/annotation_guideline.md",
+          "original": "lab04/data/images/COSM019_original.png",
+          "original_sha256": "23facf9569523f9573611bcddec547ad8b44c29bad0fed2a46a0cae30cfa46fb",
+          "rights_status": "project_generated",
+          "source": "controlled_synthetic"
+        },
+        "reasons": [],
+        "record_id": "PAIR019_04",
+        "release_allowed": false,
+        "review_status": "awaiting_expert",
+        "status": "ok"
+      }
+    },
+    {
+      "case": "changed_retry_conflicts",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_correct_01",
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "actor": "designer_demo",
+        "action": "correct",
+        "proposed_label": 0,
+        "defect_type": "none",
+        "note": "Другое исправление"
+      },
+      "expected": {
+        "http_status": 409,
+        "error": "event_id_conflict"
+      },
+      "http_status": 409,
+      "output": {
+        "error": "event_id_conflict",
+        "human_decision_required": false,
+        "status": "error"
+      }
+    },
+    {
+      "case": "decision_after_pending_blocked",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_accept_02",
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "actor": "designer_demo",
+        "action": "accept",
+        "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена."
+      },
+      "expected": {
+        "http_status": 409,
+        "error": "inspection_already_decided"
+      },
+      "http_status": 409,
+      "output": {
+        "error": "inspection_already_decided",
+        "human_decision_required": false,
+        "status": "error"
+      }
+    },
+    {
+      "case": "label_visibility_unconfirmed",
+      "method": "POST",
+      "path": "/inspect",
+      "input": {
+        "record_id": "PAIR002_01",
+        "context": {
+          "same_product": true,
+          "frontal_view": true,
+          "label_visible": false,
+          "regions_aligned": true
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "assessment": "manual_review"
+      },
+      "http_status": 200,
+      "output": {
+        "applied_rules": [
+          "K1",
+          "K2",
+          "K3",
+          "K4"
+        ],
+        "assessment": "manual_review",
+        "context": {
+          "frontal_view": true,
+          "label_visible": false,
+          "regions_aligned": true,
+          "same_product": true
+        },
+        "dataset_updated": false,
+        "feedback": null,
+        "human_decision_required": true,
+        "inspection_id": "I_20f7ece54a06191777040357",
+        "knowledge_version": "1.0",
+        "machine_result": null,
+        "model_updated": false,
+        "provenance": {
+          "candidate": "lab04/data/images/PAIR002_01_candidate.png",
+          "candidate_sha256": "5e77fe1e581d3cbfaaa7dd8c98c521d3143544ea58eee56eaa3113fc336f604d",
+          "instruction": "lab06/annotation_guideline.md",
+          "original": "lab04/data/images/COSM002_original.png",
+          "original_sha256": "2d4873574b3928f251d3a18fe674c36c1ce866dd20a92b98abe55f7aba4abf22",
+          "rights_status": "project_generated",
+          "source": "controlled_synthetic"
+        },
+        "reasons": [
+          "label_visibility_not_confirmed"
+        ],
+        "record_id": "PAIR002_01",
+        "release_allowed": false,
+        "review_status": "awaiting_expert",
+        "status": "manual_review"
+      }
+    },
+    {
+      "case": "accept_unverifiable_blocked",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_accept_03",
+        "inspection_id": "I_20f7ece54a06191777040357",
+        "actor": "designer_demo",
+        "action": "accept",
+        "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена."
+      },
+      "expected": {
+        "http_status": 409,
+        "error": "expert_review_required"
+      },
+      "http_status": 409,
+      "output": {
+        "error": "expert_review_required",
+        "human_decision_required": false,
+        "status": "error"
+      }
+    },
+    {
+      "case": "escalate_uncertain_pair",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_escalate_01",
+        "inspection_id": "I_20f7ece54a06191777040357",
+        "actor": "designer_demo",
+        "action": "escalate",
+        "note": "Видимость этикетки не подтверждена. Нужен проверяющий и подходящий кадр."
+      },
+      "expected": {
+        "http_status": 200,
+        "status": "pending_review"
+      },
+      "http_status": 200,
+      "output": {
+        "action": "escalate",
+        "actor": "designer_demo",
+        "created_at": "2026-11-26T14:21:23.110141+00:00",
+        "dataset_updated": false,
+        "defect_type": null,
+        "event_id": "E_escalate_01",
+        "inspection_id": "I_20f7ece54a06191777040357",
+        "knowledge_version": "1.0",
+        "model_updated": false,
+        "note": "Видимость этикетки не подтверждена. Нужен проверяющий и подходящий кадр.",
+        "proposed_label": null,
+        "record_id": "PAIR002_01",
+        "review_status": "awaiting_expert",
+        "status": "pending_review"
+      }
+    },
+    {
+      "case": "inspect_text_change",
+      "method": "POST",
+      "path": "/inspect",
+      "input": {
+        "record_id": "PAIR001_08",
+        "context": {
+          "same_product": true,
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true
+        }
+      },
+      "expected": {
+        "http_status": 200,
+        "assessment": "suspected_distortion"
+      },
+      "http_status": 200,
+      "output": {
+        "applied_rules": [
+          "K1",
+          "K2",
+          "K3",
+          "K4"
+        ],
+        "assessment": "suspected_distortion",
+        "context": {
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true,
+          "same_product": true
+        },
+        "dataset_updated": false,
+        "feedback": null,
+        "human_decision_required": true,
+        "inspection_id": "I_e56073689fdebdd03f6a498f",
+        "knowledge_version": "1.0",
+        "machine_result": {
+          "assessment": "suspected_distortion",
+          "dataset_version": "1.0",
+          "fallback_reason": null,
+          "human_decision_required": true,
+          "input": {
+            "candidate_box": [
+              59,
+              52,
+              161,
+              240
+            ],
+            "candidate_size": [
+              224,
+              288
+            ],
+            "original_box": [
+              61,
+              54,
+              163,
+              242
+            ],
+            "original_size": [
+              224,
+              288
+            ]
+          },
+          "message": "Требуется проверить упаковку, этикетку и форму товара.",
+          "mode": "baseline",
+          "model_version": "ssim_1.0",
+          "score": 0.059290144335,
+          "status": "ok",
+          "threshold": 0.017705861976
+        },
+        "model_updated": false,
+        "provenance": {
+          "candidate": "lab04/data/images/PAIR001_08_candidate.png",
+          "candidate_sha256": "589260b726bb8a92d088adfba7a21ee6d5a334c66d66dec08e32b20c026796f7",
+          "instruction": "lab06/annotation_guideline.md",
+          "original": "lab04/data/images/COSM001_original.png",
+          "original_sha256": "032d5dd6ef88482af848987160361f8b2f165ae81aabc3043ba44a8578297f91",
+          "rights_status": "project_generated",
+          "source": "controlled_synthetic"
+        },
+        "reasons": [],
+        "record_id": "PAIR001_08",
+        "release_allowed": false,
+        "review_status": "awaiting_designer",
+        "status": "ok"
+      }
+    },
+    {
+      "case": "designer_rejects_frame",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_reject_01",
+        "inspection_id": "I_e56073689fdebdd03f6a498f",
+        "actor": "designer_demo",
+        "action": "reject",
+        "note": "Изменилась значимая надпись на этикетке. Кадр отправлен на доработку."
+      },
+      "expected": {
+        "http_status": 200,
+        "review_status": "designer_rejected"
+      },
+      "http_status": 200,
+      "output": {
+        "action": "reject",
+        "actor": "designer_demo",
+        "created_at": "2026-11-26T14:21:23.113714+00:00",
+        "dataset_updated": false,
+        "defect_type": null,
+        "event_id": "E_reject_01",
+        "inspection_id": "I_e56073689fdebdd03f6a498f",
+        "knowledge_version": "1.0",
+        "model_updated": false,
+        "note": "Изменилась значимая надпись на этикетке. Кадр отправлен на доработку.",
+        "proposed_label": null,
+        "record_id": "PAIR001_08",
+        "review_status": "designer_rejected",
+        "status": "recorded"
+      }
+    },
+    {
+      "case": "unknown_record",
+      "method": "POST",
+      "path": "/inspect",
+      "input": {
+        "record_id": "PAIR999_99",
+        "context": {
+          "same_product": true,
+          "frontal_view": true,
+          "label_visible": true,
+          "regions_aligned": true
+        }
+      },
+      "expected": {
+        "http_status": 404,
+        "error": "record_not_found"
+      },
+      "http_status": 404,
+      "output": {
+        "error": "record_not_found",
+        "human_decision_required": false,
+        "status": "error"
+      }
+    },
+    {
+      "case": "invalid_context",
+      "method": "POST",
+      "path": "/inspect",
+      "input": {
+        "record_id": "PAIR001_01",
+        "context": {}
+      },
+      "expected": {
+        "http_status": 400,
+        "error": "context_requires_four_booleans"
+      },
+      "http_status": 400,
+      "output": {
+        "error": "context_requires_four_booleans",
+        "human_decision_required": false,
+        "status": "error"
+      }
+    },
+    {
+      "case": "wrong_actor",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_accept_01",
+        "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+        "actor": "anonymous",
+        "action": "accept",
+        "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена."
+      },
+      "expected": {
+        "http_status": 403,
+        "error": "actor_not_allowed"
+      },
+      "http_status": 403,
+      "output": {
+        "error": "actor_not_allowed",
+        "human_decision_required": false,
+        "status": "error"
+      }
+    },
+    {
+      "case": "inconsistent_correction",
+      "method": "POST",
+      "path": "/feedback",
+      "input": {
+        "event_id": "E_invalid_01",
+        "inspection_id": "I_418c7bb927053c980bb484ac",
+        "actor": "designer_demo",
+        "action": "correct",
+        "proposed_label": 0,
+        "defect_type": "text",
+        "note": "Затемнение кадра. Текст, логотип и форма сохранены."
+      },
+      "expected": {
+        "http_status": 400,
+        "error": "invalid_label_and_defect_type"
+      },
+      "http_status": 400,
+      "output": {
+        "error": "invalid_label_and_defect_type",
+        "human_decision_required": false,
+        "status": "error"
+      }
+    }
+  ],
+  "events_after_restart": [
+    {
+      "action": "accept",
+      "actor": "designer_demo",
+      "created_at": "2026-11-26T14:21:23.099062+00:00",
+      "dataset_updated": false,
+      "defect_type": null,
+      "event_id": "E_accept_01",
+      "inspection_id": "I_37a73c2dd3fc80cb34b0ab3f",
+      "knowledge_version": "1.0",
+      "model_updated": false,
+      "note": "Визуально проверены надпись, логотип и контур. Упаковка сохранена.",
+      "proposed_label": null,
+      "record_id": "PAIR001_01",
+      "review_status": "designer_accepted",
+      "status": "recorded"
+    },
+    {
+      "action": "correct",
+      "actor": "designer_demo",
+      "created_at": "2026-11-26T14:21:23.103906+00:00",
+      "dataset_updated": false,
+      "defect_type": "none",
+      "event_id": "E_correct_01",
+      "inspection_id": "I_418c7bb927053c980bb484ac",
+      "knowledge_version": "1.0",
+      "model_updated": false,
+      "note": "Затемнение кадра. Текст, логотип и форма сохранены.",
+      "proposed_label": 0,
+      "record_id": "PAIR019_04",
+      "review_status": "awaiting_expert",
+      "status": "pending_review"
+    },
+    {
+      "action": "escalate",
+      "actor": "designer_demo",
+      "created_at": "2026-11-26T14:21:23.110141+00:00",
+      "dataset_updated": false,
+      "defect_type": null,
+      "event_id": "E_escalate_01",
+      "inspection_id": "I_20f7ece54a06191777040357",
+      "knowledge_version": "1.0",
+      "model_updated": false,
+      "note": "Видимость этикетки не подтверждена. Нужен проверяющий и подходящий кадр.",
+      "proposed_label": null,
+      "record_id": "PAIR002_01",
+      "review_status": "awaiting_expert",
+      "status": "pending_review"
+    },
+    {
+      "action": "reject",
+      "actor": "designer_demo",
+      "created_at": "2026-11-26T14:21:23.113714+00:00",
+      "dataset_updated": false,
+      "defect_type": null,
+      "event_id": "E_reject_01",
+      "inspection_id": "I_e56073689fdebdd03f6a498f",
+      "knowledge_version": "1.0",
+      "model_updated": false,
+      "note": "Изменилась значимая надпись на этикетке. Кадр отправлен на доработку.",
+      "proposed_label": null,
+      "record_id": "PAIR001_08",
+      "review_status": "designer_rejected",
+      "status": "recorded"
+    }
+  ],
+  "checks": {
+    "sqlite_reopened": true,
+    "stored_events": 4,
+    "retries_create_no_duplicate": true,
+    "protected_files_unchanged": true,
+    "input_sha256": {
+      "lab06/data/prepared.json": "cbefcebcb2d1ce66bee9ce313889e8ccda4ba426e4a568e6c71e0c728f46122d",
+      "lab06/data/summary.json": "f6505a1faaa52b6372db892f0b17a5e73f45ddbcbaeb20ba9925371473f822e2",
+      "lab09/results/decision.json": "aa405a329c03742d4fed5da7f654b5a5e67ca8dc2a7a47cee5eacab201f1fa45",
+      "lab11/config.json": "72cb59c8a5f046e57ca41df6e159396217fcfaf40823341aacc189cf72b7eeba",
+      "lab12/knowledge.json": "cc3e756c98ba478ec01d209dfd4e8729f79f85c7176a031d3c11616f4389317a"
+    }
+  }
+}
